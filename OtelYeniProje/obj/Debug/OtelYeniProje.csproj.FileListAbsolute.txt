@@ -98,3 +98,17 @@ C:\Users\vatan\source\repos\Otel\OtelYeniProje\obj\Debug\OtelYeniProje.Formlar.P
 C:\Users\vatan\source\repos\Otel\OtelYeniProje\obj\Debug\OtelYeniProje.Formlar.Personel.FrmPersonelListesi.resources
 C:\Users\vatan\source\repos\Otel\OtelYeniProje\obj\Debug\OtelYeniProje.Formlar.Misafir.FrmMisafirKarti.resources
 C:\Users\vatan\source\repos\Otel\OtelYeniProje\obj\Debug\OtelYeniProje.Formlar.Misafir.FrmMisafirListesi.resources
+C:\Users\vatan\source\repos\Otel\OtelYeniProje\obj\Debug\OtelYeniProje.Formlar.Urun.FrmUrunListesi.resources
+C:\Users\vatan\source\repos\Otel\OtelYeniProje\obj\Debug\OtelYeniProje.Formlar.Urun.FrmUrunKarti.resources
+C:\Users\vatan\source\repos\Otel\OtelYeniProje\obj\Debug\OtelYeniProje.Formlar.Urun.FrmUrunGirisHareketleri.resources
+C:\Users\vatan\source\repos\Otel\OtelYeniProje\obj\Debug\OtelYeniProje.Formlar.Urun.FrmUrunCikisHareketleri.resources
+C:\Users\vatan\source\repos\Otel\OtelYeniProje\obj\Debug\OtelYeniProje.Formlar.Urun.FrmUrunHareketTanimi.resources
+C:\Users\vatan\source\repos\Otel\OtelYeniProje\obj\Debug\OtelYeniProje.Formlar.Rezervasyon.FrmRezervasyonKarti.resources
+C:\Users\vatan\source\repos\Otel\OtelYeniProje\obj\Debug\OtelYeniProje.Formlar.Rezervasyon.FrmAktifRezervasyon.resources
+C:\Users\vatan\source\repos\Otel\OtelYeniProje\obj\Debug\OtelYeniProje.Formlar.Rezervasyon.FrmGecmisRezervasyon.resources
+C:\Users\vatan\source\repos\Otel\OtelYeniProje\obj\Debug\OtelYeniProje.Formlar.Rezervasyon.FrmGelecekRezervasyon.resources
+C:\Users\vatan\source\repos\Otel\OtelYeniProje\obj\Debug\OtelYeniProje.Formlar.Rezervasyon.FrmIptalRezervasyon.resources
+C:\Users\vatan\source\repos\Otel\OtelYeniProje\obj\Debug\OtelYeniProje.Formlar.Rezervasyon.FrmTumRezervasyonlar.resources
+C:\Users\vatan\source\repos\Otel\OtelYeniProje\obj\Debug\OtelYeniProje.Formlar.Araclar.FrmGoogle.resources
+C:\Users\vatan\source\repos\Otel\OtelYeniProje\obj\Debug\OtelYeniProje.Formlar.Araclar.FrmKurlar.resources
+C:\Users\vatan\source\repos\Otel\OtelYeniProje\obj\Debug\OtelYeniProje.Formlar.Araclar.FrmYoutube.resources

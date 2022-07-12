@@ -26,7 +26,7 @@ namespace OtelYeniProje.Formlar.Personel
 
         private void FrmPersonelKarti_Load(object sender, EventArgs e)
         {
-            this.Text = id.ToString();
+            //this.Text = id.ToString(); FrmPersonelKarti yüklenince pencerenin Text kısmına değerin döndüğünü görmek için atama yaptık. 
 
             if (id != 0)
             {

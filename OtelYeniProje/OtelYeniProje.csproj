@@ -116,6 +116,9 @@
     <Compile Include="Entity\TblPersonel.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity\TblRezervasyon.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity\TblTelefon.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -128,11 +131,32 @@
     <Compile Include="Entity\TblUrunGrup.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity\TblUrunHareket.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Araclar\FrmGoogle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Araclar\FrmGoogle.Designer.cs">
+      <DependentUpon>FrmGoogle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Araclar\FrmKurlar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Araclar\FrmKurlar.Designer.cs">
+      <DependentUpon>FrmKurlar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Araclar\FrmYoutube.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Araclar\FrmYoutube.Designer.cs">
+      <DependentUpon>FrmYoutube.cs</DependentUpon>
     </Compile>
     <Compile Include="Formlar\Misafir\FrmMisafirKarti.cs">
       <SubType>Form</SubType>
@@ -157,6 +181,42 @@
     </Compile>
     <Compile Include="Formlar\Personel\FrmPersonelListesi.Designer.cs">
       <DependentUpon>FrmPersonelListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Rezervasyon\FrmAktifRezervasyon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Rezervasyon\FrmAktifRezervasyon.Designer.cs">
+      <DependentUpon>FrmAktifRezervasyon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Rezervasyon\FrmGecmisRezervasyon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Rezervasyon\FrmGecmisRezervasyon.Designer.cs">
+      <DependentUpon>FrmGecmisRezervasyon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Rezervasyon\FrmGelecekRezervasyon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Rezervasyon\FrmGelecekRezervasyon.Designer.cs">
+      <DependentUpon>FrmGelecekRezervasyon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Rezervasyon\FrmIptalRezervasyon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Rezervasyon\FrmIptalRezervasyon.Designer.cs">
+      <DependentUpon>FrmIptalRezervasyon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Rezervasyon\FrmRezervasyonKarti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Rezervasyon\FrmRezervasyonKarti.Designer.cs">
+      <DependentUpon>FrmRezervasyonKarti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Rezervasyon\FrmTumRezervasyonlar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Rezervasyon\FrmTumRezervasyonlar.Designer.cs">
+      <DependentUpon>FrmTumRezervasyonlar.cs</DependentUpon>
     </Compile>
     <Compile Include="Formlar\Tanımlamalar\FrmBirim.cs">
       <SubType>Form</SubType>
@@ -218,12 +278,51 @@
     <Compile Include="Formlar\Tanımlamalar\FrmUrunGrup.Designer.cs">
       <DependentUpon>FrmUrunGrup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formlar\Urun\FrmUrunCikisHareketleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Urun\FrmUrunCikisHareketleri.Designer.cs">
+      <DependentUpon>FrmUrunCikisHareketleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Urun\FrmUrunGirisHareketleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Urun\FrmUrunGirisHareketleri.Designer.cs">
+      <DependentUpon>FrmUrunGirisHareketleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Urun\FrmUrunHareketTanimi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Urun\FrmUrunHareketTanimi.Designer.cs">
+      <DependentUpon>FrmUrunHareketTanimi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Urun\FrmUrunKarti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Urun\FrmUrunKarti.Designer.cs">
+      <DependentUpon>FrmUrunKarti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Urun\FrmUrunListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Urun\FrmUrunListesi.Designer.cs">
+      <DependentUpon>FrmUrunListesi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Expression.cs" />
     <Compile Include="Repositories\Repository.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Araclar\FrmGoogle.resx">
+      <DependentUpon>FrmGoogle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Araclar\FrmKurlar.resx">
+      <DependentUpon>FrmKurlar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Araclar\FrmYoutube.resx">
+      <DependentUpon>FrmYoutube.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\Misafir\FrmMisafirKarti.resx">
       <DependentUpon>FrmMisafirKarti.cs</DependentUpon>
@@ -236,6 +335,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\Personel\FrmPersonelListesi.resx">
       <DependentUpon>FrmPersonelListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Rezervasyon\FrmAktifRezervasyon.resx">
+      <DependentUpon>FrmAktifRezervasyon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Rezervasyon\FrmGecmisRezervasyon.resx">
+      <DependentUpon>FrmGecmisRezervasyon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Rezervasyon\FrmGelecekRezervasyon.resx">
+      <DependentUpon>FrmGelecekRezervasyon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Rezervasyon\FrmIptalRezervasyon.resx">
+      <DependentUpon>FrmIptalRezervasyon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Rezervasyon\FrmRezervasyonKarti.resx">
+      <DependentUpon>FrmRezervasyonKarti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Rezervasyon\FrmTumRezervasyonlar.resx">
+      <DependentUpon>FrmTumRezervasyonlar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\Tanımlamalar\FrmBirim.resx">
       <DependentUpon>FrmBirim.cs</DependentUpon>
@@ -266,6 +383,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\Tanımlamalar\FrmUrunGrup.resx">
       <DependentUpon>FrmUrunGrup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Urun\FrmUrunCikisHareketleri.resx">
+      <DependentUpon>FrmUrunCikisHareketleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Urun\FrmUrunGirisHareketleri.resx">
+      <DependentUpon>FrmUrunGirisHareketleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Urun\FrmUrunHareketTanimi.resx">
+      <DependentUpon>FrmUrunHareketTanimi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Urun\FrmUrunKarti.resx">
+      <DependentUpon>FrmUrunKarti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Urun\FrmUrunListesi.resx">
+      <DependentUpon>FrmUrunListesi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -41,5 +41,7 @@ namespace OtelYeniProje.Entity
         public virtual DbSet<TblUrunGrup> TblUrunGrups { get; set; }
         public virtual DbSet<ilceler> ilcelers { get; set; }
         public virtual DbSet<iller> illers { get; set; }
+        public virtual DbSet<TblUrunHareket> TblUrunHarekets { get; set; }
+        public virtual DbSet<TblRezervasyon> TblRezervasyons { get; set; }
     }
 }

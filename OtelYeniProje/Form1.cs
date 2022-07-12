@@ -102,5 +102,115 @@ namespace OtelYeniProje
             fr.MdiParent = this;
             fr.Show();
         }
+
+        private void BtnUrunListesi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Urun.FrmUrunListesi fr = new Formlar.Urun.FrmUrunListesi();
+            fr.MdiParent = this;
+            fr.Show();
+        }
+
+        private void BrnUrunKarti_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Urun.FrmUrunKarti fr = new Formlar.Urun.FrmUrunKarti();
+            fr.Show();
+        }
+
+        private void BtnUrunGiris_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Urun.FrmUrunGirisHareketleri fr = new Formlar.Urun.FrmUrunGirisHareketleri();
+            fr.MdiParent = this;
+            fr.Show();
+        }
+
+        private void BtnUrunCikis_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Urun.FrmUrunCikisHareketleri fr = new Formlar.Urun.FrmUrunCikisHareketleri();
+            fr.MdiParent = this;
+            fr.Show();
+        }
+
+        private void BtnYeniUrunHareketi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Urun.FrmUrunHareketTanimi fr = new Formlar.Urun.FrmUrunHareketTanimi();
+            fr.Show();
+        }
+
+        private void BtnRezervasyonKarti_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Rezervasyon.FrmRezervasyonKarti fr = new Formlar.Rezervasyon.FrmRezervasyonKarti();
+            fr.Show();
+        }
+
+        private void BtnTumRezervasyonlar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Rezervasyon.FrmTumRezervasyonlar fr = new Formlar.Rezervasyon.FrmTumRezervasyonlar();
+            fr.MdiParent = this;
+            fr.Show();
+        }
+
+        private void BtnAktifRezervasyonlar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Rezervasyon.FrmAktifRezervasyon fr = new Formlar.Rezervasyon.FrmAktifRezervasyon();
+            fr.MdiParent = this;
+            fr.Show();
+        }
+
+        private void BtnIptalRezervasyon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Rezervasyon.FrmIptalRezervasyon fr = new Formlar.Rezervasyon.FrmIptalRezervasyon();
+            fr.MdiParent = this;
+            fr.Show();
+        }
+
+        private void BtnGecmisRezervasyon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Rezervasyon.FrmGecmisRezervasyon fr = new Formlar.Rezervasyon.FrmGecmisRezervasyon();
+            fr.MdiParent = this;
+            fr.Show();
+        }
+
+        private void BtnGelecekRezervasyon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Rezervasyon.FrmGelecekRezervasyon fr = new Formlar.Rezervasyon.FrmGelecekRezervasyon();
+            fr.MdiParent = this;
+            fr.Show();
+        }
+
+        private void BtnWord_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            System.Diagnostics.Process.Start("winword.exe");
+        }
+
+        private void BtnHesapMakinesi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            System.Diagnostics.Process.Start("Calc.exe");
+        }
+
+        private void BtnExcel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            System.Diagnostics.Process.Start("excel");
+        }
+
+        private void BtnKurlar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Araclar.FrmKurlar fr = new Formlar.Araclar.FrmKurlar();
+            fr.MdiParent = this;
+            fr.Show();
+        }
+
+        private void BtnYoutube_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Araclar.FrmYoutube fr = new Formlar.Araclar.FrmYoutube();
+            fr.MdiParent = this;
+            fr.Show();
+        }
+
+        private void BtnGoogle_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Araclar.FrmGoogle fr = new Formlar.Araclar.FrmGoogle();
+            fr.MdiParent = this;
+            fr.Show();
+        }
     }
 }
