@@ -1,4 +1,4 @@
-﻿using OtelYeniProje.Entity;
+﻿using OtelYeniProje.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +10,7 @@ namespace OtelYeniProje.Repositories
 {
     public class Repository<T> where T:class,new()
     {
-        DbOtelEntities1 db = new DbOtelEntities1();
+        DbOtelEntities2 db = new DbOtelEntities2();
 
         public List<T> GetAll()
         {

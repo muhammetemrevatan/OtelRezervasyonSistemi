@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OtelYeniProje.Entity
+namespace OtelYeniProje.Entities
 {
     using System;
     using System.Collections.Generic;
@@ -25,10 +25,10 @@ namespace OtelYeniProje.Entity
             this.TblMisafirs = new HashSet<TblMisafir>();
             this.TblOdas = new HashSet<TblOda>();
             this.TblPersonels = new HashSet<TblPersonel>();
+            this.TblRezervasyons = new HashSet<TblRezervasyon>();
             this.TblTelefons = new HashSet<TblTelefon>();
             this.TblUruns = new HashSet<TblUrun>();
             this.TblUrunGrups = new HashSet<TblUrunGrup>();
-            this.TblRezervasyons = new HashSet<TblRezervasyon>();
         }
     
         public int DurumID { get; set; }
@@ -51,12 +51,12 @@ namespace OtelYeniProje.Entity
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TblPersonel> TblPersonels { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TblRezervasyon> TblRezervasyons { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TblTelefon> TblTelefons { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TblUrun> TblUruns { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TblUrunGrup> TblUrunGrups { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TblRezervasyon> TblRezervasyons { get; set; }
     }
 }

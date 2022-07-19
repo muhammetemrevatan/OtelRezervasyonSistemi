@@ -112,3 +112,4 @@ C:\Users\vatan\source\repos\Otel\OtelYeniProje\obj\Debug\OtelYeniProje.Formlar.R
 C:\Users\vatan\source\repos\Otel\OtelYeniProje\obj\Debug\OtelYeniProje.Formlar.Araclar.FrmGoogle.resources
 C:\Users\vatan\source\repos\Otel\OtelYeniProje\obj\Debug\OtelYeniProje.Formlar.Araclar.FrmKurlar.resources
 C:\Users\vatan\source\repos\Otel\OtelYeniProje\obj\Debug\OtelYeniProje.Formlar.Araclar.FrmYoutube.resources
+C:\Users\vatan\source\repos\Otel\OtelYeniProje\obj\Debug\OtelYeniProje.Formlar.WebSite.FrmYeniKayit.resources

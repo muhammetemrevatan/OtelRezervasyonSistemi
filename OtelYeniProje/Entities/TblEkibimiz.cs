@@ -7,20 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OtelYeniProje.Entity
+namespace OtelYeniProje.Entities
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class TblKur
+    public partial class TblEkibimiz
     {
-        public int KurId { get; set; }
-        public string KurAd { get; set; }
-        public string Sembol { get; set; }
-        public Nullable<decimal> Deger { get; set; }
-        public Nullable<System.DateTime> Tarih { get; set; }
-        public Nullable<int> Durum { get; set; }
-    
-        public virtual TblDurum TblDurum { get; set; }
+        public int ID { get; set; }
+        public string AdSoyad { get; set; }
+        public string Unvan { get; set; }
+        public string Gorsel { get; set; }
     }
 }

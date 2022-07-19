@@ -1,5 +1,5 @@
 ﻿using DevExpress.XtraEditors;
-using OtelYeniProje.Entity;
+using OtelYeniProje.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,7 +20,7 @@ namespace OtelYeniProje.Formlar.Tanımlamalar
             InitializeComponent();
         }
 
-        DbOtelEntities1 db = new DbOtelEntities1();
+        DbOtelEntities2 db = new DbOtelEntities2();
         private void FrmDepartman_Load(object sender, EventArgs e)
         {
             db.TblDepartmen.Load();

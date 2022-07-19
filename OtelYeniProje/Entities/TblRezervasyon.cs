@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OtelYeniProje.Entity
+namespace OtelYeniProje.Entities
 {
     using System;
     using System.Collections.Generic;
@@ -21,9 +21,12 @@ namespace OtelYeniProje.Entity
         public string Kisi { get; set; }
         public Nullable<int> Oda { get; set; }
         public string RezervasyonAdSoyad { get; set; }
+        public Nullable<int> Kisi2 { get; set; }
+        public Nullable<int> Kisi3 { get; set; }
+        public Nullable<int> Kisi4 { get; set; }
         public string Telefon { get; set; }
         public string Aciklana { get; set; }
-        public int Durum { get; set; }
+        public Nullable<int> Durum { get; set; }
     
         public virtual TblDurum TblDurum { get; set; }
         public virtual TblMisafir TblMisafir { get; set; }

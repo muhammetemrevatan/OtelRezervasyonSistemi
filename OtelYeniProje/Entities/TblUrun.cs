@@ -7,29 +7,32 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OtelYeniProje.Entity
+namespace OtelYeniProje.Entities
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class TblDepartman
+    public partial class TblUrun
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TblDepartman()
+        public TblUrun()
         {
-            this.TblGorevs = new HashSet<TblGorev>();
-            this.TblPersonels = new HashSet<TblPersonel>();
+            this.TblUrunHarekets = new HashSet<TblUrunHareket>();
         }
     
-        public int DepartmanID { get; set; }
-        public string DepartmanAd { get; set; }
-        public string Telefon { get; set; }
+        public int UrunID { get; set; }
+        public string UrunAd { get; set; }
+        public Nullable<int> UrunGrup { get; set; }
+        public Nullable<int> Birim { get; set; }
+        public Nullable<decimal> Fiyat { get; set; }
+        public Nullable<decimal> Toplam { get; set; }
+        public Nullable<byte> Kdv { get; set; }
         public Nullable<int> Durum { get; set; }
     
+        public virtual TblBirim TblBirim { get; set; }
         public virtual TblDurum TblDurum { get; set; }
+        public virtual TblUrunGrup TblUrunGrup { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TblGorev> TblGorevs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TblPersonel> TblPersonels { get; set; }
+        public virtual ICollection<TblUrunHareket> TblUrunHarekets { get; set; }
     }
 }

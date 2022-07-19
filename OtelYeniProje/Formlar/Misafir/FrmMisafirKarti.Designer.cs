@@ -182,6 +182,7 @@
             // 
             this.pictureEditKimlikArka.Location = new System.Drawing.Point(240, 9);
             this.pictureEditKimlikArka.Name = "pictureEditKimlikArka";
+            this.pictureEditKimlikArka.Properties.NullText = "Kimlik Arka Yüzü (Eklemek için sağ tıklayın.)";
             this.pictureEditKimlikArka.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEditKimlikArka.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEditKimlikArka.Size = new System.Drawing.Size(225, 96);
@@ -190,8 +191,9 @@
             // 
             // pictureEditKimlikOn
             // 
-            this.pictureEditKimlikOn.Location = new System.Drawing.Point(5, 9);
+            this.pictureEditKimlikOn.Location = new System.Drawing.Point(0, 9);
             this.pictureEditKimlikOn.Name = "pictureEditKimlikOn";
+            this.pictureEditKimlikOn.Properties.NullText = "Kimlik Ön Yüzü (Eklemek için sağ tıklayın.)";
             this.pictureEditKimlikOn.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEditKimlikOn.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEditKimlikOn.Size = new System.Drawing.Size(225, 96);
@@ -307,7 +309,7 @@
             // BtnGuncelle
             // 
             this.BtnGuncelle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnGuncelle.ImageOptions.Image")));
-            this.BtnGuncelle.Location = new System.Drawing.Point(247, 11);
+            this.BtnGuncelle.Location = new System.Drawing.Point(359, 11);
             this.BtnGuncelle.Name = "BtnGuncelle";
             this.BtnGuncelle.Size = new System.Drawing.Size(106, 43);
             this.BtnGuncelle.TabIndex = 2;
@@ -565,6 +567,10 @@
             // 
             this.TxtAdSoyad.Location = new System.Drawing.Point(106, 9);
             this.TxtAdSoyad.Name = "TxtAdSoyad";
+            this.TxtAdSoyad.Properties.Appearance.BackColor = System.Drawing.Color.White;
+            this.TxtAdSoyad.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.TxtAdSoyad.Properties.Appearance.Options.UseBackColor = true;
+            this.TxtAdSoyad.Properties.Appearance.Options.UseForeColor = true;
             this.TxtAdSoyad.Size = new System.Drawing.Size(373, 20);
             this.TxtAdSoyad.TabIndex = 1;
             // 

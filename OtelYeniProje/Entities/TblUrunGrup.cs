@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OtelYeniProje.Entity
+namespace OtelYeniProje.Entities
 {
     using System;
     using System.Collections.Generic;

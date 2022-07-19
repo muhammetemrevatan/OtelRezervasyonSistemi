@@ -200,6 +200,9 @@
     <EntitySetMapping Name="TblRezervasyons">
       <EntityTypeMapping TypeName="DbOtelModel.TblRezervasyon">
         <MappingFragment StoreEntitySet="TblRezervasyon">
+          <ScalarProperty Name="Kisi4" ColumnName="Kisi4" />
+          <ScalarProperty Name="Kisi3" ColumnName="Kisi3" />
+          <ScalarProperty Name="Kisi2" ColumnName="Kisi2" />
           <ScalarProperty Name="Durum" ColumnName="Durum" />
           <ScalarProperty Name="Aciklana" ColumnName="Aciklana" />
           <ScalarProperty Name="Telefon" ColumnName="Telefon" />

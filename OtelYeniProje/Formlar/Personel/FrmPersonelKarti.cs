@@ -1,5 +1,5 @@
 ﻿using DevExpress.XtraEditors;
-using OtelYeniProje.Entity;
+using OtelYeniProje.Entities;
 using OtelYeniProje.Repositories;
 using System;
 using System.Collections.Generic;
@@ -20,9 +20,10 @@ namespace OtelYeniProje.Formlar.Personel
             InitializeComponent();
         }
 
-        DbOtelEntities1 db = new DbOtelEntities1();
+        DbOtelEntities2 db = new DbOtelEntities2();
         public int id;
         Repository<TblPersonel> repo = new Repository<TblPersonel>();
+        TblPersonel t = new TblPersonel();
 
         private void FrmPersonelKarti_Load(object sender, EventArgs e)
         {
@@ -40,10 +41,19 @@ namespace OtelYeniProje.Formlar.Personel
                 dateEditCikis.Text = personel.IstenCikisTarih.ToString();
                 TxtAciklama.Text = personel.Aciklama;
                 TxtSifre.Text = personel.Sifre;
-                pictureEditKimlikOn.Image = Image.FromFile(personel.KimlikOn);
-                pictureEditKimlikArka.Image = Image.FromFile(personel.KimlikArka);
-                labelControl14.Text = personel.KimlikOn;
-                labelControl15.Text = personel.KimlikArka;
+                try
+                {
+                    pictureEditKimlikOn.Image = Image.FromFile(personel.KimlikOn);
+                    pictureEditKimlikArka.Image = Image.FromFile(personel.KimlikArka);
+                    labelControl14.Text = personel.KimlikOn;
+                    labelControl15.Text = personel.KimlikArka;
+                }
+                catch (Exception)
+                {
+
+                    XtraMessageBox.Show("Fotoğraf eklemelisiniz.", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+                
                 lookUpEditDepartmant.EditValue = personel.Departman;
                 lookUpEditGorev.EditValue = personel.Gorev;
             }
@@ -74,61 +84,161 @@ namespace OtelYeniProje.Formlar.Personel
             BtnGuncelle.Visible = b;
         }
 
+        public void btnKaydeChanged(bool b)
+        {
+            BtnKaydet.Visible = b;
+        }
+
         private void BtnKaydet_Click(object sender, EventArgs e)
         {
-            TblPersonel t = new TblPersonel();
-            t.AdSoyad = TxtAdSoyad.Text;
-            t.TC = TxtTc.Text;
-            t.Adres = TxtAdres.Text;
-            t.Telefon = TxtTelefon.Text;
-            t.IseGirisTarih = DateTime.Parse(dateEditGiris.Text);
-            t.Departman = int.Parse(lookUpEditDepartmant.EditValue.ToString());
-            t.Gorev = int.Parse(lookUpEditGorev.EditValue.ToString());
-            t.Aciklama = TxtAciklama.Text;
-            t.Mail = TxtMail.Text;
-            t.KimlikOn = pictureEditKimlikOn.GetLoadedImageLocation();
-            t.KimlikArka = pictureEditKimlikArka.GetLoadedImageLocation();
-            t.Sifre = TxtSifre.Text;
-            t.Durum = 1;
-
-            try
+            if (TxtAdSoyad.Text.Equals("") || TxtTc.Text.Equals("") || TxtTelefon.Text.Equals("")
+                || TxtSifre.Text.Equals("") || dateEditGiris.Text.Equals("") || lookUpEditDepartmant.EditValue.ToString().Equals("") 
+                || lookUpEditGorev.EditValue.ToString().Equals("") || labelControl14.Text == "" || labelControl15.Text == "")
             {
-                if(TxtTc.Text.Length != 11)
+                if (TxtAdSoyad.Text.Equals(""))
                 {
-                    XtraMessageBox.Show("TC 11 haneli olarak girilmelidir..", "HATA");
+                    TxtAdSoyad.BackColor = System.Drawing.Color.LightGoldenrodYellow;
                 }
-                else
+                if (TxtTc.Text.Equals(""))
                 {
-                    repo.TAdd(t);
-                    XtraMessageBox.Show("Personel sisteme kaydedildi.", "Başarılı");
+                    TxtTc.BackColor = System.Drawing.Color.LightGoldenrodYellow;
                 }
-                
+                if (TxtTelefon.Text.Equals(""))
+                {
+                    TxtTelefon.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+                }
+                if (TxtSifre.Text.Equals(""))
+                {
+                    TxtSifre.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+                }
+                if (lookUpEditGorev.EditValue == null)
+                {
+                    lookUpEditGorev.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+                }
+                if (lookUpEditDepartmant.EditValue == null)
+                {
+                    lookUpEditDepartmant.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+                }
+                if (dateEditGiris.Text.Equals(""))
+                {
+                    dateEditGiris.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+                }
+                XtraMessageBox.Show("Tüm alanları doldurmalısınız.", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
-            catch (Exception)
+            else
             {
+                t.AdSoyad = TxtAdSoyad.Text;
+                t.TC = TxtTc.Text;
+                t.Adres = TxtAdres.Text;
+                t.Telefon = TxtTelefon.Text;
+                t.IseGirisTarih = DateTime.Parse(dateEditGiris.Text);
+                t.Departman = int.Parse(lookUpEditDepartmant.EditValue.ToString());
+                t.Gorev = int.Parse(lookUpEditGorev.EditValue.ToString());
+                t.Aciklama = TxtAciklama.Text;
+                t.Mail = TxtMail.Text;
+                t.KimlikOn = pictureEditKimlikOn.GetLoadedImageLocation();
+                t.KimlikArka = pictureEditKimlikArka.GetLoadedImageLocation();
+                t.Sifre = TxtSifre.Text;
+                t.Durum = 1;
 
-                XtraMessageBox.Show("Personel sisteme eklenemedi. Lütfen alanları doğru girdiğinizden emin olun.","HATA");
+                try
+                {
+                    if (TxtTc.Text.Length != 11)
+                    {
+                        XtraMessageBox.Show("TC 11 haneli olarak girilmelidir..", "HATA");
+                    }
+                    else
+                    {
+                        repo.TAdd(t);
+                        XtraMessageBox.Show("Personel sisteme kaydedildi.", "Başarılı");
+                    }
+
+                }
+                catch (Exception)
+                {
+
+                    XtraMessageBox.Show("Personel sisteme eklenemedi. Lütfen alanları doğru girdiğinizden emin olun.", "HATA");
+                }
+                this.Close();
             }
+           
             
         }
 
         private void BtnGuncelle_Click(object sender, EventArgs e)
         {
             var deger = repo.Find(x => x.PersonelID == id);
-            deger.AdSoyad = TxtAdSoyad.Text;
-            deger.TC = TxtTc.Text;
-            deger.Adres = TxtAdres.Text;
-            deger.Telefon = TxtTelefon.Text;
-            deger.IseGirisTarih = DateTime.Parse(dateEditGiris.Text);
-            deger.Departman = int.Parse(lookUpEditDepartmant.EditValue.ToString());
-            deger.Gorev = int.Parse(lookUpEditGorev.EditValue.ToString());
-            deger.Aciklama = TxtAciklama.Text;
-            deger.Mail = TxtMail.Text;
-            deger.KimlikOn = labelControl14.Text;
-            deger.KimlikArka = labelControl15.Text;
-            deger.Sifre = TxtSifre.Text;
-            repo.TUpdate(deger);
-            XtraMessageBox.Show("Personel kartı bilgileri güncellendi.", "Bilgi",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            if (TxtAdSoyad.Text.Equals("") || TxtTc.Text.Equals("") || TxtTelefon.Text.Equals("")
+               || TxtSifre.Text.Equals("") || dateEditGiris.Text.Equals("") || lookUpEditDepartmant.EditValue.ToString().Equals("")
+               || lookUpEditGorev.EditValue.ToString().Equals("") || labelControl14.Text == "" || labelControl15.Text == "")
+            {
+                if (TxtAdSoyad.Text.Equals(""))
+                {
+                    TxtAdSoyad.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+                }
+                if (TxtTc.Text.Equals(""))
+                {
+                    TxtTc.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+                }
+                if (TxtTelefon.Text.Equals(""))
+                {
+                    TxtTelefon.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+                }
+                if (TxtSifre.Text.Equals(""))
+                {
+                    TxtSifre.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+                }
+                if (lookUpEditGorev.EditValue == null)
+                {
+                    lookUpEditGorev.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+                }
+                if (lookUpEditDepartmant.EditValue == null)
+                {
+                    lookUpEditDepartmant.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+                }
+                if (dateEditGiris.Text.Equals(""))
+                {
+                    dateEditGiris.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+                }
+                XtraMessageBox.Show("Tüm alanları doldurmalısınız.", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            else
+            {
+                deger.AdSoyad = TxtAdSoyad.Text;
+                deger.TC = TxtTc.Text;
+                deger.Adres = TxtAdres.Text;
+                deger.Telefon = TxtTelefon.Text;
+                deger.IseGirisTarih = DateTime.Parse(dateEditGiris.Text);
+                deger.Departman = int.Parse(lookUpEditDepartmant.EditValue.ToString());
+                deger.Gorev = int.Parse(lookUpEditGorev.EditValue.ToString());
+                deger.Aciklama = TxtAciklama.Text;
+                deger.Mail = TxtMail.Text;
+                deger.KimlikOn = labelControl14.Text;
+                deger.KimlikArka = labelControl15.Text;
+                deger.Sifre = TxtSifre.Text;
+                try
+                {
+                    if (TxtTc.Text.Length != 11)
+                    {
+                        XtraMessageBox.Show("TC 11 haneli olarak girilmelidir..", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        repo.TUpdate(deger);
+                        XtraMessageBox.Show("Personel kartı bilgileri güncellendi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                }
+                catch (Exception)
+                {
+
+                    XtraMessageBox.Show("Personel sistemde güncellenemedi. Lütfen alanları doğru girdiğinizden emin olun.", "HATA");
+                }
+                this.Close();
+
+                
+            }
+            
         }
 
         private void pictureEditKimlikOn_EditValueChanged(object sender, EventArgs e)

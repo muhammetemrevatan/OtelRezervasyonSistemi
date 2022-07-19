@@ -1,4 +1,4 @@
-﻿using OtelYeniProje.Entity;
+﻿using OtelYeniProje.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +18,7 @@ namespace OtelYeniProje.Formlar.Personel
             InitializeComponent();
         }
 
-        DbOtelEntities1 db = new DbOtelEntities1();
+        DbOtelEntities2 db = new DbOtelEntities2();
 
         private void FrmPersonelListesi_Load(object sender, EventArgs e)
         {
@@ -40,8 +40,10 @@ namespace OtelYeniProje.Formlar.Personel
         {
             FrmPersonelKarti fr = new FrmPersonelKarti();
             fr.btnGuncelleChanged(true);
+            fr.btnKaydeChanged(false);
             fr.id = int.Parse(gridView1.GetFocusedRowCellValue("PersonelID").ToString());
             fr.Show();
+            this.Close();
         }
     }
 }

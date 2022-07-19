@@ -1,5 +1,5 @@
 ﻿using DevExpress.XtraEditors;
-using OtelYeniProje.Entity;
+using OtelYeniProje.Entities;
 using OtelYeniProje.Repositories;
 using System;
 using System.Collections.Generic;
@@ -20,7 +20,7 @@ namespace OtelYeniProje.Formlar.Misafir
             InitializeComponent();
         }
 
-        DbOtelEntities1 db = new DbOtelEntities1();
+        DbOtelEntities2 db = new DbOtelEntities2();
         public int id;
         Repository<TblMisafir> repo = new Repository<TblMisafir>();
         TblMisafir t = new TblMisafir();
@@ -39,10 +39,18 @@ namespace OtelYeniProje.Formlar.Misafir
                 TxtTelefon.Text = misafir.Telefon;
                 TxtMail.Text = misafir.Mail;
                 TxtAciklama.Text = misafir.Aciklama;
-                pictureEditKimlikOn.Image = Image.FromFile(misafir.KimlikFoto1);
-                pictureEditKimlikArka.Image = Image.FromFile(misafir.KimlikFoto2);
-                resim1 = misafir.KimlikFoto1;
-                resim2 = misafir.KimlikFoto2;
+                try
+                {
+                    pictureEditKimlikOn.Image = Image.FromFile(misafir.KimlikFoto1);
+                    pictureEditKimlikArka.Image = Image.FromFile(misafir.KimlikFoto2);
+                    resim1 = misafir.KimlikFoto1;
+                    resim2 = misafir.KimlikFoto2;
+                }
+                catch (Exception)
+                {
+
+                    XtraMessageBox.Show("Fotoğraf eklemelisiniz.","HATA",MessageBoxButtons.OK,MessageBoxIcon.Stop);
+                }
                 lookUpEditSehir.EditValue = misafir.sehir;
                 lookUpEditUlke.EditValue = misafir.Ulke;
                 lookUpEditilce.EditValue = misafir.ilce;
@@ -98,45 +106,98 @@ namespace OtelYeniProje.Formlar.Misafir
             BtnGuncelle.Visible = b;
         }
 
+        public void btnKaydetChanged(bool b)
+        {
+            BtnKaydet.Visible = b;
+        }
+
         private void BtnGuncelle_Click(object sender, EventArgs e)
         {
             var deger = repo.Find(x => x.MisafirID == id);
-            deger.AdSoyad = TxtAdSoyad.Text;
-            deger.TC = TxtTc.Text;
-            deger.Mail = TxtMail.Text;
-            deger.Telefon = TxtTelefon.Text;
-            deger.Adres = TxtAdres.Text;
-            deger.Aciklama = TxtAciklama.Text;
-            deger.KimlikFoto1 = resim1;
-            deger.KimlikFoto2 = resim2;
-            deger.Ulke = int.Parse(lookUpEditUlke.EditValue.ToString());
-            deger.sehir = int.Parse(lookUpEditSehir.EditValue.ToString());
-            deger.ilce = int.Parse(lookUpEditilce.EditValue.ToString());
-            deger.Durum = 1;
-            repo.TUpdate(deger);
-            XtraMessageBox.Show("Misafir kartı bilgileri güncellendi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (TxtAdSoyad.Text.Equals("") || TxtTc.Text.Equals("") || TxtTelefon.Text.Equals("")
+                || lookUpEditSehir.EditValue == null || lookUpEditilce.EditValue == null
+                || lookUpEditUlke.EditValue == null || resim1 == null || resim2 == null)
+            {
+                if (TxtAdSoyad.Text.Equals(""))
+                {
+                    TxtAdSoyad.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+                }
+                if (TxtTc.Text.Equals(""))
+                {
+                    TxtTc.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+                }
+                if (TxtTelefon.Text.Equals(""))
+                {
+                    TxtTelefon.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+                }
+                XtraMessageBox.Show("Tüm alanları doldurmalısınız.", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            else
+            {
+                deger.AdSoyad = TxtAdSoyad.Text;
+                deger.TC = TxtTc.Text;
+                deger.Mail = TxtMail.Text;
+                deger.Telefon = TxtTelefon.Text;
+                deger.Adres = TxtAdres.Text;
+                deger.Aciklama = TxtAciklama.Text;
+                deger.KimlikFoto1 = resim1;
+                deger.KimlikFoto2 = resim2;
+                deger.Ulke = int.Parse(lookUpEditUlke.EditValue.ToString());
+                deger.sehir = int.Parse(lookUpEditSehir.EditValue.ToString());
+                deger.ilce = int.Parse(lookUpEditilce.EditValue.ToString());
+                deger.Durum = 1;
+                repo.TUpdate(deger);
+                XtraMessageBox.Show("Misafir kartı bilgileri güncellendi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            
         }
 
         private void BtnKaydet_Click(object sender, EventArgs e)
         {
-            
-
-            t.AdSoyad = TxtAdSoyad.Text;
-            t.TC = TxtTc.Text;
-            t.Mail = TxtMail.Text;
-            t.Telefon = TxtTelefon.Text;
-            t.Adres = TxtAdres.Text;
-            t.Aciklama = TxtAciklama.Text;
-            t.Durum = 1;
-            t.sehir = int.Parse(lookUpEditSehir.EditValue.ToString());
-            t.ilce = int.Parse(lookUpEditilce.EditValue.ToString());
-            t.Ulke = int.Parse(lookUpEditUlke.EditValue.ToString());
-            t.KimlikFoto1 = resim1;
-            t.KimlikFoto2 = resim2;
-            repo.TAdd(t);
-            XtraMessageBox.Show("Misafir sisteme başarılı bir şekilde kaydedildi.");
-
-
+            if (TxtAdSoyad.Text.Equals("") || TxtTc.Text.Equals("") || TxtTelefon.Text.Equals("")
+                || lookUpEditSehir.EditValue == null || lookUpEditilce.EditValue == null
+                || lookUpEditUlke.EditValue == null || resim1 == null || resim2 == null)
+            {
+                if (TxtAdSoyad.Text.Equals(""))
+                {
+                    TxtAdSoyad.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+                }
+                if (TxtTc.Text.Equals(""))
+                {
+                    TxtTc.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+                }
+                if (TxtTelefon.Text.Equals(""))
+                {
+                    TxtTelefon.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+                }
+                XtraMessageBox.Show("Tüm alanları doldurmalısınız.", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            else
+            {
+                if (TxtTc.Text.Length != 11)
+                {
+                    XtraMessageBox.Show("TC 11 haneli olarak girilmelidir..", "HATA");
+                }
+                else
+                {
+                    t.AdSoyad = TxtAdSoyad.Text;
+                    t.TC = TxtTc.Text;
+                    t.Mail = TxtMail.Text;
+                    t.Telefon = TxtTelefon.Text;
+                    t.Adres = TxtAdres.Text;
+                    t.Aciklama = TxtAciklama.Text;
+                    t.Durum = 1;
+                    t.sehir = int.Parse(lookUpEditSehir.EditValue.ToString());
+                    t.ilce = int.Parse(lookUpEditilce.EditValue.ToString());
+                    t.Ulke = int.Parse(lookUpEditUlke.EditValue.ToString());
+                    t.KimlikFoto1 = resim1;
+                    t.KimlikFoto2 = resim2;
+                    repo.TAdd(t);
+                    XtraMessageBox.Show("Misafir sisteme başarılı bir şekilde kaydedildi.");
+                    this.Close();
+                }
+                
+            }
         }
     }
 }

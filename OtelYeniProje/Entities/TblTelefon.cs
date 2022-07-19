@@ -7,29 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OtelYeniProje.Entity
+namespace OtelYeniProje.Entities
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class TblOda
+    public partial class TblTelefon
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TblOda()
-        {
-            this.TblRezervasyons = new HashSet<TblRezervasyon>();
-        }
-    
-        public int OdaID { get; set; }
-        public string OdaNo { get; set; }
-        public string Kat { get; set; }
-        public string Kapasite { get; set; }
+        public int TelefonID { get; set; }
         public string Aciklama { get; set; }
         public string Telefon { get; set; }
         public Nullable<int> Durum { get; set; }
     
         public virtual TblDurum TblDurum { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TblRezervasyon> TblRezervasyons { get; set; }
     }
 }

@@ -142,9 +142,12 @@
     <Property Name="Kisi" Type="char" MaxLength="1" />
     <Property Name="Oda" Type="int" />
     <Property Name="RezervasyonAdSoyad" Type="nvarchar" MaxLength="30" />
+    <Property Name="Kisi2" Type="int" />
+    <Property Name="Kisi3" Type="int" />
+    <Property Name="Kisi4" Type="int" />
     <Property Name="Telefon" Type="nvarchar" MaxLength="20" />
     <Property Name="Aciklana" Type="nvarchar" MaxLength="500" />
-    <Property Name="Durum" Type="int" Nullable="false" />
+    <Property Name="Durum" Type="int" />
   </EntityType>
   <EntityType Name="TblTelefon">
     <Key>
@@ -363,7 +366,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_TblRezervasyon_TblDurum">
-    <End Role="TblDurum" Type="Self.TblDurum" Multiplicity="1" />
+    <End Role="TblDurum" Type="Self.TblDurum" Multiplicity="0..1" />
     <End Role="TblRezervasyon" Type="Self.TblRezervasyon" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="TblDurum">

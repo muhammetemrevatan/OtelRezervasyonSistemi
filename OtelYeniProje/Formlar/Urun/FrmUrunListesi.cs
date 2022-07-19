@@ -1,5 +1,5 @@
 ﻿using DevExpress.XtraEditors;
-using OtelYeniProje.Entity;
+using OtelYeniProje.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,7 +19,7 @@ namespace OtelYeniProje.Formlar.Urun
             InitializeComponent();
         }
 
-        DbOtelEntities1 db = new DbOtelEntities1();
+        DbOtelEntities2 db = new DbOtelEntities2();
 
         private void FrmUrunListesi_Load(object sender, EventArgs e)
         {
@@ -41,10 +41,10 @@ namespace OtelYeniProje.Formlar.Urun
         {
             FrmUrunKarti fr = new FrmUrunKarti();
             fr.btnGuncelleChanged(true);
+            fr.btnKaydetChanged(false);
                 fr.id = int.Parse(gridView1.GetFocusedRowCellValue("UrunID").ToString());
                 fr.Show();
                 this.Close();
-            
         }
     }
 }

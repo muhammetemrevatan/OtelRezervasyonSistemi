@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="80ae281fa9d1487496763014ce15bf72" Name="Diagram1">
+        <EntityTypeShape EntityType="Model1.ilceler" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.iller" Width="1.5" PointX="3.5" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.TblBirim" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.TblDepartman" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.TblDurum" Width="1.5" PointX="0.75" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.TblEkibimiz" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.TblGorev" Width="1.5" PointX="5.25" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.TblHakkimda" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.TblIletisim" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.TblKasa" Width="1.5" PointX="3" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.TblKur" Width="1.5" PointX="3" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.TblMailBirakanlar" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.TblMesaj" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.TblMesaj2" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.TblMisafir" Width="1.5" PointX="8" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.TblOda" Width="1.5" PointX="3" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.TblPersonel" Width="1.5" PointX="7.5" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.TblRezervasyon" Width="1.5" PointX="10.25" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.TblTelefon" Width="1.5" PointX="3" PointY="27.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.TblUlke" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.TblUrun" Width="1.5" PointX="5.25" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.TblUrunGrup" Width="1.5" PointX="3" PointY="30" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.TblUrunHareket" Width="1.5" PointX="7.5" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.TblYeniKayit" Width="1.5" PointX="9.75" PointY="6.75" IsExpanded="true" />
+        <AssociationConnector Association="Model1.FK_ilceler_iller" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_TblMisafir_ilceler" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_TblMisafir_iller" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_TblBirim_TblDurum1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_TblUrun_TblBirim1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_TblDepartman_TblDurum1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_TblGorev_TblDepartman1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_TblPersonel_TblDepartman1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_TblGorev_TblDurum1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_TblKasa_TblDurum1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_TblKur_TblDurum1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_TblMisafir_TblDurum1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_TblOda_TblDurum1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_TblPersonel_TblDurum2" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_TblRezervasyon_TblDurum1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_TblTelefon_TblDurum1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_TblUrun_TblDurum1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_TblUrunGrup_TblDurum1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_TblPersonel_TblGorev" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_TblRezervasyon_TblMisafir" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_TblRezervasyon_TblOda" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_TblUrun_TblUrunGrup1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_TblUrunHareket_TblUrun" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

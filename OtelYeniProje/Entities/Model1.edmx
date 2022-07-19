@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="DbOtelModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Model1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ilceler">
           <Key>
             <PropertyRef Name="id" />
@@ -54,6 +54,15 @@
           <Property Name="DurumID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="DurumAd" Type="nvarchar" MaxLength="20" />
         </EntityType>
+        <EntityType Name="TblEkibimiz">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdSoyad" Type="nvarchar" MaxLength="50" />
+          <Property Name="Unvan" Type="nvarchar" MaxLength="50" />
+          <Property Name="Gorsel" Type="nvarchar" MaxLength="250" />
+        </EntityType>
         <EntityType Name="TblGorev">
           <Key>
             <PropertyRef Name="GorevID" />
@@ -62,6 +71,27 @@
           <Property Name="GorevAd" Type="nvarchar" MaxLength="50" />
           <Property Name="Departman" Type="int" />
           <Property Name="Durum" Type="int" />
+        </EntityType>
+        <EntityType Name="TblHakkimda">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Hakkimda1" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Hakkimda2" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Hakkimda3" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Hakkimda4" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="TblIletisim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Aciklama" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Koordinat" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Telefon" Type="nvarchar" MaxLength="20" />
+          <Property Name="Mail" Type="nvarchar" MaxLength="50" />
+          <Property Name="Adress" Type="nvarchar" MaxLength="250" />
         </EntityType>
         <EntityType Name="TblKasa">
           <Key>
@@ -84,6 +114,34 @@
           <Property Name="Deger" Type="decimal" Precision="18" Scale="4" />
           <Property Name="Tarih" Type="date" />
           <Property Name="Durum" Type="int" />
+        </EntityType>
+        <EntityType Name="TblMailBirakanlar">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Mail" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TblMesaj">
+          <Key>
+            <PropertyRef Name="MesajID" />
+          </Key>
+          <Property Name="MesajID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Gonderen" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mail" Type="nvarchar" MaxLength="50" />
+          <Property Name="Konu" Type="nvarchar" MaxLength="100" />
+          <Property Name="Mesaj" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="TblMesaj2">
+          <Key>
+            <PropertyRef Name="MesajID" />
+          </Key>
+          <Property Name="MesajID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Gonderen" Type="nvarchar" MaxLength="100" />
+          <Property Name="Alici" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Konu" Type="nvarchar" MaxLength="100" />
+          <Property Name="Mesaj" Type="nvarchar(max)" />
+          <Property Name="Tarih" Type="date" />
         </EntityType>
         <EntityType Name="TblMisafir">
           <Key>
@@ -147,9 +205,12 @@
           <Property Name="Kisi" Type="char" MaxLength="1" />
           <Property Name="Oda" Type="int" />
           <Property Name="RezervasyonAdSoyad" Type="nvarchar" MaxLength="30" />
+          <Property Name="Kisi2" Type="int" />
+          <Property Name="Kisi3" Type="int" />
+          <Property Name="Kisi4" Type="int" />
           <Property Name="Telefon" Type="nvarchar" MaxLength="20" />
           <Property Name="Aciklana" Type="nvarchar" MaxLength="500" />
-          <Property Name="Durum" Type="int" Nullable="false" />
+          <Property Name="Durum" Type="int" />
         </EntityType>
         <EntityType Name="TblTelefon">
           <Key>
@@ -198,6 +259,16 @@
           <Property Name="Miktar" Type="decimal" Precision="18" Scale="2" />
           <Property Name="Tarih" Type="date" />
           <Property Name="Aciklama" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="TblYeniKayit">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdSoyad" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mail" Type="nvarchar" MaxLength="50" />
+          <Property Name="Telefon" Type="nvarchar" MaxLength="20" />
+          <Property Name="Sifre" Type="nvarchar" MaxLength="20" />
         </EntityType>
         <Association Name="FK_ilceler_iller">
           <End Role="iller" Type="Self.iller" Multiplicity="1" />
@@ -367,8 +438,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_TblRezervasyon_TblDurum">
-          <End Role="TblDurum" Type="Self.TblDurum" Multiplicity="1" />
+        <Association Name="FK_TblRezervasyon_TblDurum1">
+          <End Role="TblDurum" Type="Self.TblDurum" Multiplicity="0..1" />
           <End Role="TblRezervasyon" Type="Self.TblRezervasyon" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TblDurum">
@@ -475,16 +546,22 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="DbOtelModelStoreContainer">
+        <EntityContainer Name="Model1StoreContainer">
           <EntitySet Name="ilceler" EntityType="Self.ilceler" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="iller" EntityType="Self.iller" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblBirim" EntityType="Self.TblBirim" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblDepartman" EntityType="Self.TblDepartman" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblDurum" EntityType="Self.TblDurum" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblEkibimiz" EntityType="Self.TblEkibimiz" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblGorev" EntityType="Self.TblGorev" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblHakkimda" EntityType="Self.TblHakkimda" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblIletisim" EntityType="Self.TblIletisim" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblKasa" EntityType="Self.TblKasa" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblKur" EntityType="Self.TblKur" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblMailBirakanlar" EntityType="Self.TblMailBirakanlar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblMesaj" EntityType="Self.TblMesaj" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblMesaj2" EntityType="Self.TblMesaj2" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblMisafir" EntityType="Self.TblMisafir" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblOda" EntityType="Self.TblOda" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblPersonel" EntityType="Self.TblPersonel" Schema="dbo" store:Type="Tables" />
@@ -494,6 +571,7 @@
           <EntitySet Name="TblUrun" EntityType="Self.TblUrun" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblUrunGrup" EntityType="Self.TblUrunGrup" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblUrunHareket" EntityType="Self.TblUrunHareket" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblYeniKayit" EntityType="Self.TblYeniKayit" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_ilceler_iller" Association="Self.FK_ilceler_iller">
             <End Role="iller" EntitySet="iller" />
             <End Role="ilceler" EntitySet="ilceler" />
@@ -550,7 +628,7 @@
             <End Role="TblGorev" EntitySet="TblGorev" />
             <End Role="TblPersonel" EntitySet="TblPersonel" />
           </AssociationSet>
-          <AssociationSet Name="FK_TblRezervasyon_TblDurum" Association="Self.FK_TblRezervasyon_TblDurum">
+          <AssociationSet Name="FK_TblRezervasyon_TblDurum1" Association="Self.FK_TblRezervasyon_TblDurum1">
             <End Role="TblDurum" EntitySet="TblDurum" />
             <End Role="TblRezervasyon" EntitySet="TblRezervasyon" />
           </AssociationSet>
@@ -587,10 +665,30 @@
             <End Role="TblUrunHareket" EntitySet="TblUrunHareket" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="DbOtelModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="Model1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ilceler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="ilce" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="sehir" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="iller" Relationship="Self.FK_ilceler_iller" FromRole="ilceler" ToRole="iller" />
+          <NavigationProperty Name="TblMisafirs" Relationship="Self.FK_TblMisafir_ilceler" FromRole="ilceler" ToRole="TblMisafir" />
+        </EntityType>
+        <EntityType Name="iller">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sehir" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ilcelers" Relationship="Self.FK_ilceler_iller" FromRole="iller" ToRole="ilceler" />
+          <NavigationProperty Name="TblMisafirs" Relationship="Self.FK_TblMisafir_iller" FromRole="iller" ToRole="TblMisafir" />
+        </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -637,10 +735,19 @@
           <NavigationProperty Name="TblMisafirs" Relationship="Self.FK_TblMisafir_TblDurum1" FromRole="TblDurum" ToRole="TblMisafir" />
           <NavigationProperty Name="TblOdas" Relationship="Self.FK_TblOda_TblDurum1" FromRole="TblDurum" ToRole="TblOda" />
           <NavigationProperty Name="TblPersonels" Relationship="Self.FK_TblPersonel_TblDurum2" FromRole="TblDurum" ToRole="TblPersonel" />
+          <NavigationProperty Name="TblRezervasyons" Relationship="Self.FK_TblRezervasyon_TblDurum1" FromRole="TblDurum" ToRole="TblRezervasyon" />
           <NavigationProperty Name="TblTelefons" Relationship="Self.FK_TblTelefon_TblDurum1" FromRole="TblDurum" ToRole="TblTelefon" />
           <NavigationProperty Name="TblUruns" Relationship="Self.FK_TblUrun_TblDurum1" FromRole="TblDurum" ToRole="TblUrun" />
           <NavigationProperty Name="TblUrunGrups" Relationship="Self.FK_TblUrunGrup_TblDurum1" FromRole="TblDurum" ToRole="TblUrunGrup" />
-          <NavigationProperty Name="TblRezervasyons" Relationship="DbOtelModel.FK_TblRezervasyon_TblDurum" FromRole="TblDurum" ToRole="TblRezervasyon" />
+        </EntityType>
+        <EntityType Name="TblEkibimiz">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Unvan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Gorsel" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="TblGorev">
           <Key>
@@ -653,6 +760,27 @@
           <NavigationProperty Name="TblDepartman" Relationship="Self.FK_TblGorev_TblDepartman1" FromRole="TblGorev" ToRole="TblDepartman" />
           <NavigationProperty Name="TblDurum" Relationship="Self.FK_TblGorev_TblDurum1" FromRole="TblGorev" ToRole="TblDurum" />
           <NavigationProperty Name="TblPersonels" Relationship="Self.FK_TblPersonel_TblGorev" FromRole="TblGorev" ToRole="TblPersonel" />
+        </EntityType>
+        <EntityType Name="TblHakkimda">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Hakkimda1" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Hakkimda2" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Hakkimda3" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Hakkimda4" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblIletisim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Aciklama" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Koordinat" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Telefon" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Adress" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="TblKasa">
           <Key>
@@ -678,6 +806,34 @@
           <Property Name="Durum" Type="Int32" />
           <NavigationProperty Name="TblDurum" Relationship="Self.FK_TblKur_TblDurum1" FromRole="TblKur" ToRole="TblDurum" />
         </EntityType>
+        <EntityType Name="TblMailBirakanlar">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Mail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblMesaj">
+          <Key>
+            <PropertyRef Name="MesajID" />
+          </Key>
+          <Property Name="MesajID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Gonderen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Konu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Mesaj" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblMesaj2">
+          <Key>
+            <PropertyRef Name="MesajID" />
+          </Key>
+          <Property Name="MesajID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Gonderen" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Alici" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Konu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Mesaj" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Tarih" Type="DateTime" Precision="0" />
+        </EntityType>
         <EntityType Name="TblMisafir">
           <Key>
             <PropertyRef Name="MisafirID" />
@@ -692,13 +848,13 @@
           <Property Name="KimlikFoto1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="KimlikFoto2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Ulke" Type="Int32" />
-          <Property Name="Durum" Type="Int32" />
-          <NavigationProperty Name="TblDurum" Relationship="Self.FK_TblMisafir_TblDurum1" FromRole="TblMisafir" ToRole="TblDurum" />
           <Property Name="sehir" Type="Int32" />
           <Property Name="ilce" Type="Int32" />
-          <NavigationProperty Name="ilceler" Relationship="DbOtelModel.FK_TblMisafir_ilceler" FromRole="TblMisafir" ToRole="ilceler" />
-          <NavigationProperty Name="iller" Relationship="DbOtelModel.FK_TblMisafir_iller" FromRole="TblMisafir" ToRole="iller" />
-          <NavigationProperty Name="TblRezervasyons" Relationship="DbOtelModel.FK_TblRezervasyon_TblMisafir" FromRole="TblMisafir" ToRole="TblRezervasyon" />
+          <Property Name="Durum" Type="Int32" />
+          <NavigationProperty Name="ilceler" Relationship="Self.FK_TblMisafir_ilceler" FromRole="TblMisafir" ToRole="ilceler" />
+          <NavigationProperty Name="iller" Relationship="Self.FK_TblMisafir_iller" FromRole="TblMisafir" ToRole="iller" />
+          <NavigationProperty Name="TblDurum" Relationship="Self.FK_TblMisafir_TblDurum1" FromRole="TblMisafir" ToRole="TblDurum" />
+          <NavigationProperty Name="TblRezervasyons" Relationship="Self.FK_TblRezervasyon_TblMisafir" FromRole="TblMisafir" ToRole="TblRezervasyon" />
         </EntityType>
         <EntityType Name="TblOda">
           <Key>
@@ -712,7 +868,7 @@
           <Property Name="Telefon" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
           <Property Name="Durum" Type="Int32" />
           <NavigationProperty Name="TblDurum" Relationship="Self.FK_TblOda_TblDurum1" FromRole="TblOda" ToRole="TblDurum" />
-          <NavigationProperty Name="TblRezervasyons" Relationship="DbOtelModel.FK_TblRezervasyon_TblOda" FromRole="TblOda" ToRole="TblRezervasyon" />
+          <NavigationProperty Name="TblRezervasyons" Relationship="Self.FK_TblRezervasyon_TblOda" FromRole="TblOda" ToRole="TblRezervasyon" />
         </EntityType>
         <EntityType Name="TblPersonel">
           <Key>
@@ -729,14 +885,35 @@
           <Property Name="Departman" Type="Int32" />
           <Property Name="Gorev" Type="Int32" />
           <Property Name="Aciklama" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="Durum" Type="Int32" />
-          <NavigationProperty Name="TblDepartman" Relationship="Self.FK_TblPersonel_TblDepartman1" FromRole="TblPersonel" ToRole="TblDepartman" />
-          <NavigationProperty Name="TblDurum" Relationship="Self.FK_TblPersonel_TblDurum2" FromRole="TblPersonel" ToRole="TblDurum" />
-          <NavigationProperty Name="TblGorev" Relationship="Self.FK_TblPersonel_TblGorev" FromRole="TblPersonel" ToRole="TblGorev" />
           <Property Name="KimlikOn" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="KimlikArka" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="Sifre" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Yetki" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Durum" Type="Int32" />
+          <NavigationProperty Name="TblDepartman" Relationship="Self.FK_TblPersonel_TblDepartman1" FromRole="TblPersonel" ToRole="TblDepartman" />
+          <NavigationProperty Name="TblDurum" Relationship="Self.FK_TblPersonel_TblDurum2" FromRole="TblPersonel" ToRole="TblDurum" />
+          <NavigationProperty Name="TblGorev" Relationship="Self.FK_TblPersonel_TblGorev" FromRole="TblPersonel" ToRole="TblGorev" />
+        </EntityType>
+        <EntityType Name="TblRezervasyon">
+          <Key>
+            <PropertyRef Name="RezervasyonID" />
+          </Key>
+          <Property Name="RezervasyonID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Misafir" Type="Int32" />
+          <Property Name="GirisTarih" Type="DateTime" Precision="0" />
+          <Property Name="CikisTarih" Type="DateTime" Precision="0" />
+          <Property Name="Kisi" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Oda" Type="Int32" />
+          <Property Name="RezervasyonAdSoyad" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Kisi2" Type="Int32" />
+          <Property Name="Kisi3" Type="Int32" />
+          <Property Name="Kisi4" Type="Int32" />
+          <Property Name="Telefon" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Aciklana" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Durum" Type="Int32" />
+          <NavigationProperty Name="TblDurum" Relationship="Self.FK_TblRezervasyon_TblDurum1" FromRole="TblRezervasyon" ToRole="TblDurum" />
+          <NavigationProperty Name="TblMisafir" Relationship="Self.FK_TblRezervasyon_TblMisafir" FromRole="TblRezervasyon" ToRole="TblMisafir" />
+          <NavigationProperty Name="TblOda" Relationship="Self.FK_TblRezervasyon_TblOda" FromRole="TblRezervasyon" ToRole="TblOda" />
         </EntityType>
         <EntityType Name="TblTelefon">
           <Key>
@@ -770,7 +947,7 @@
           <NavigationProperty Name="TblBirim" Relationship="Self.FK_TblUrun_TblBirim1" FromRole="TblUrun" ToRole="TblBirim" />
           <NavigationProperty Name="TblDurum" Relationship="Self.FK_TblUrun_TblDurum1" FromRole="TblUrun" ToRole="TblDurum" />
           <NavigationProperty Name="TblUrunGrup" Relationship="Self.FK_TblUrun_TblUrunGrup1" FromRole="TblUrun" ToRole="TblUrunGrup" />
-          <NavigationProperty Name="TblUrunHarekets" Relationship="DbOtelModel.FK_TblUrunHareket_TblUrun" FromRole="TblUrun" ToRole="TblUrunHareket" />
+          <NavigationProperty Name="TblUrunHarekets" Relationship="Self.FK_TblUrunHareket_TblUrun" FromRole="TblUrun" ToRole="TblUrunHareket" />
         </EntityType>
         <EntityType Name="TblUrunGrup">
           <Key>
@@ -782,6 +959,64 @@
           <NavigationProperty Name="TblDurum" Relationship="Self.FK_TblUrunGrup_TblDurum1" FromRole="TblUrunGrup" ToRole="TblDurum" />
           <NavigationProperty Name="TblUruns" Relationship="Self.FK_TblUrun_TblUrunGrup1" FromRole="TblUrunGrup" ToRole="TblUrun" />
         </EntityType>
+        <EntityType Name="TblUrunHareket">
+          <Key>
+            <PropertyRef Name="HareketID" />
+          </Key>
+          <Property Name="HareketID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Urun" Type="Int32" />
+          <Property Name="HareketTuru" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Miktar" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Tarih" Type="DateTime" Precision="0" />
+          <Property Name="Aciklama" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TblUrun" Relationship="Self.FK_TblUrunHareket_TblUrun" FromRole="TblUrunHareket" ToRole="TblUrun" />
+        </EntityType>
+        <EntityType Name="TblYeniKayit">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Telefon" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Sifre" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_ilceler_iller">
+          <End Role="iller" Type="Self.iller" Multiplicity="1" />
+          <End Role="ilceler" Type="Self.ilceler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="iller">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ilceler">
+              <PropertyRef Name="sehir" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TblMisafir_ilceler">
+          <End Role="ilceler" Type="Self.ilceler" Multiplicity="0..1" />
+          <End Role="TblMisafir" Type="Self.TblMisafir" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ilceler">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TblMisafir">
+              <PropertyRef Name="ilce" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TblMisafir_iller">
+          <End Role="iller" Type="Self.iller" Multiplicity="0..1" />
+          <End Role="TblMisafir" Type="Self.TblMisafir" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="iller">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TblMisafir">
+              <PropertyRef Name="sehir" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TblBirim_TblDurum1">
           <End Role="TblDurum" Type="Self.TblDurum" Multiplicity="0..1" />
           <End Role="TblBirim" Type="Self.TblBirim" Multiplicity="*" />
@@ -914,6 +1149,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_TblRezervasyon_TblDurum1">
+          <End Role="TblDurum" Type="Self.TblDurum" Multiplicity="0..1" />
+          <End Role="TblRezervasyon" Type="Self.TblRezervasyon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblDurum">
+              <PropertyRef Name="DurumID" />
+            </Principal>
+            <Dependent Role="TblRezervasyon">
+              <PropertyRef Name="Durum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TblTelefon_TblDurum1">
           <End Role="TblDurum" Type="Self.TblDurum" Multiplicity="0..1" />
           <End Role="TblTelefon" Type="Self.TblTelefon" Multiplicity="*" />
@@ -962,6 +1209,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_TblRezervasyon_TblMisafir">
+          <End Role="TblMisafir" Type="Self.TblMisafir" Multiplicity="0..1" />
+          <End Role="TblRezervasyon" Type="Self.TblRezervasyon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblMisafir">
+              <PropertyRef Name="MisafirID" />
+            </Principal>
+            <Dependent Role="TblRezervasyon">
+              <PropertyRef Name="Misafir" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TblRezervasyon_TblOda">
+          <End Role="TblOda" Type="Self.TblOda" Multiplicity="0..1" />
+          <End Role="TblRezervasyon" Type="Self.TblRezervasyon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblOda">
+              <PropertyRef Name="OdaID" />
+            </Principal>
+            <Dependent Role="TblRezervasyon">
+              <PropertyRef Name="Oda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TblUrun_TblUrunGrup1">
           <End Role="TblUrunGrup" Type="Self.TblUrunGrup" Multiplicity="0..1" />
           <End Role="TblUrun" Type="Self.TblUrun" Multiplicity="*" />
@@ -974,21 +1245,56 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="DbOtelEntities1" annotation:LazyLoadingEnabled="true">
+        <Association Name="FK_TblUrunHareket_TblUrun">
+          <End Role="TblUrun" Type="Self.TblUrun" Multiplicity="0..1" />
+          <End Role="TblUrunHareket" Type="Self.TblUrunHareket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblUrun">
+              <PropertyRef Name="UrunID" />
+            </Principal>
+            <Dependent Role="TblUrunHareket">
+              <PropertyRef Name="Urun" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DbOtelEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ilcelers" EntityType="Self.ilceler" />
+          <EntitySet Name="illers" EntityType="Self.iller" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="TblBirims" EntityType="Self.TblBirim" />
           <EntitySet Name="TblDepartmen" EntityType="Self.TblDepartman" />
           <EntitySet Name="TblDurums" EntityType="Self.TblDurum" />
+          <EntitySet Name="TblEkibimizs" EntityType="Self.TblEkibimiz" />
           <EntitySet Name="TblGorevs" EntityType="Self.TblGorev" />
+          <EntitySet Name="TblHakkimdas" EntityType="Self.TblHakkimda" />
+          <EntitySet Name="TblIletisims" EntityType="Self.TblIletisim" />
           <EntitySet Name="TblKasas" EntityType="Self.TblKasa" />
           <EntitySet Name="TblKurs" EntityType="Self.TblKur" />
+          <EntitySet Name="TblMailBirakanlars" EntityType="Self.TblMailBirakanlar" />
+          <EntitySet Name="TblMesajs" EntityType="Self.TblMesaj" />
+          <EntitySet Name="TblMesaj2" EntityType="Self.TblMesaj2" />
           <EntitySet Name="TblMisafirs" EntityType="Self.TblMisafir" />
           <EntitySet Name="TblOdas" EntityType="Self.TblOda" />
           <EntitySet Name="TblPersonels" EntityType="Self.TblPersonel" />
+          <EntitySet Name="TblRezervasyons" EntityType="Self.TblRezervasyon" />
           <EntitySet Name="TblTelefons" EntityType="Self.TblTelefon" />
           <EntitySet Name="TblUlkes" EntityType="Self.TblUlke" />
           <EntitySet Name="TblUruns" EntityType="Self.TblUrun" />
           <EntitySet Name="TblUrunGrups" EntityType="Self.TblUrunGrup" />
+          <EntitySet Name="TblUrunHarekets" EntityType="Self.TblUrunHareket" />
+          <EntitySet Name="TblYeniKayits" EntityType="Self.TblYeniKayit" />
+          <AssociationSet Name="FK_ilceler_iller" Association="Self.FK_ilceler_iller">
+            <End Role="iller" EntitySet="illers" />
+            <End Role="ilceler" EntitySet="ilcelers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TblMisafir_ilceler" Association="Self.FK_TblMisafir_ilceler">
+            <End Role="ilceler" EntitySet="ilcelers" />
+            <End Role="TblMisafir" EntitySet="TblMisafirs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TblMisafir_iller" Association="Self.FK_TblMisafir_iller">
+            <End Role="iller" EntitySet="illers" />
+            <End Role="TblMisafir" EntitySet="TblMisafirs" />
+          </AssociationSet>
           <AssociationSet Name="FK_TblBirim_TblDurum1" Association="Self.FK_TblBirim_TblDurum1">
             <End Role="TblDurum" EntitySet="TblDurums" />
             <End Role="TblBirim" EntitySet="TblBirims" />
@@ -1033,6 +1339,10 @@
             <End Role="TblDurum" EntitySet="TblDurums" />
             <End Role="TblPersonel" EntitySet="TblPersonels" />
           </AssociationSet>
+          <AssociationSet Name="FK_TblRezervasyon_TblDurum1" Association="Self.FK_TblRezervasyon_TblDurum1">
+            <End Role="TblDurum" EntitySet="TblDurums" />
+            <End Role="TblRezervasyon" EntitySet="TblRezervasyons" />
+          </AssociationSet>
           <AssociationSet Name="FK_TblTelefon_TblDurum1" Association="Self.FK_TblTelefon_TblDurum1">
             <End Role="TblDurum" EntitySet="TblDurums" />
             <End Role="TblTelefon" EntitySet="TblTelefons" />
@@ -1049,184 +1359,48 @@
             <End Role="TblGorev" EntitySet="TblGorevs" />
             <End Role="TblPersonel" EntitySet="TblPersonels" />
           </AssociationSet>
+          <AssociationSet Name="FK_TblRezervasyon_TblMisafir" Association="Self.FK_TblRezervasyon_TblMisafir">
+            <End Role="TblMisafir" EntitySet="TblMisafirs" />
+            <End Role="TblRezervasyon" EntitySet="TblRezervasyons" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TblRezervasyon_TblOda" Association="Self.FK_TblRezervasyon_TblOda">
+            <End Role="TblOda" EntitySet="TblOdas" />
+            <End Role="TblRezervasyon" EntitySet="TblRezervasyons" />
+          </AssociationSet>
           <AssociationSet Name="FK_TblUrun_TblUrunGrup1" Association="Self.FK_TblUrun_TblUrunGrup1">
             <End Role="TblUrunGrup" EntitySet="TblUrunGrups" />
             <End Role="TblUrun" EntitySet="TblUruns" />
           </AssociationSet>
-          <EntitySet Name="ilcelers" EntityType="DbOtelModel.ilceler" />
-          <EntitySet Name="illers" EntityType="DbOtelModel.iller" />
-          <AssociationSet Name="FK_ilceler_iller" Association="DbOtelModel.FK_ilceler_iller">
-            <End Role="iller" EntitySet="illers" />
-            <End Role="ilceler" EntitySet="ilcelers" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TblMisafir_ilceler" Association="DbOtelModel.FK_TblMisafir_ilceler">
-            <End Role="ilceler" EntitySet="ilcelers" />
-            <End Role="TblMisafir" EntitySet="TblMisafirs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TblMisafir_iller" Association="DbOtelModel.FK_TblMisafir_iller">
-            <End Role="iller" EntitySet="illers" />
-            <End Role="TblMisafir" EntitySet="TblMisafirs" />
-          </AssociationSet>
-          <EntitySet Name="TblUrunHarekets" EntityType="DbOtelModel.TblUrunHareket" />
-          <AssociationSet Name="FK_TblUrunHareket_TblUrun" Association="DbOtelModel.FK_TblUrunHareket_TblUrun">
+          <AssociationSet Name="FK_TblUrunHareket_TblUrun" Association="Self.FK_TblUrunHareket_TblUrun">
             <End Role="TblUrun" EntitySet="TblUruns" />
             <End Role="TblUrunHareket" EntitySet="TblUrunHarekets" />
           </AssociationSet>
-          <EntitySet Name="TblRezervasyons" EntityType="DbOtelModel.TblRezervasyon" />
-          <AssociationSet Name="FK_TblRezervasyon_TblDurum" Association="DbOtelModel.FK_TblRezervasyon_TblDurum">
-            <End Role="TblDurum" EntitySet="TblDurums" />
-            <End Role="TblRezervasyon" EntitySet="TblRezervasyons" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TblRezervasyon_TblMisafir" Association="DbOtelModel.FK_TblRezervasyon_TblMisafir">
-            <End Role="TblMisafir" EntitySet="TblMisafirs" />
-            <End Role="TblRezervasyon" EntitySet="TblRezervasyons" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TblRezervasyon_TblOda" Association="DbOtelModel.FK_TblRezervasyon_TblOda">
-            <End Role="TblOda" EntitySet="TblOdas" />
-            <End Role="TblRezervasyon" EntitySet="TblRezervasyons" />
-          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="ilceler">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="ilce" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="sehir" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="iller" Relationship="DbOtelModel.FK_ilceler_iller" FromRole="ilceler" ToRole="iller" />
-          <NavigationProperty Name="TblMisafirs" Relationship="DbOtelModel.FK_TblMisafir_ilceler" FromRole="ilceler" ToRole="TblMisafir" />
-        </EntityType>
-        <EntityType Name="iller">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="sehir" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="ilcelers" Relationship="DbOtelModel.FK_ilceler_iller" FromRole="iller" ToRole="ilceler" />
-          <NavigationProperty Name="TblMisafirs" Relationship="DbOtelModel.FK_TblMisafir_iller" FromRole="iller" ToRole="TblMisafir" />
-        </EntityType>
-        <Association Name="FK_ilceler_iller">
-          <End Type="DbOtelModel.iller" Role="iller" Multiplicity="1" />
-          <End Type="DbOtelModel.ilceler" Role="ilceler" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="iller">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="ilceler">
-              <PropertyRef Name="sehir" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TblMisafir_ilceler">
-          <End Type="DbOtelModel.ilceler" Role="ilceler" Multiplicity="0..1" />
-          <End Type="DbOtelModel.TblMisafir" Role="TblMisafir" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ilceler">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="TblMisafir">
-              <PropertyRef Name="ilce" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TblMisafir_iller">
-          <End Type="DbOtelModel.iller" Role="iller" Multiplicity="0..1" />
-          <End Type="DbOtelModel.TblMisafir" Role="TblMisafir" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="iller">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="TblMisafir">
-              <PropertyRef Name="sehir" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="TblUrunHareket">
-          <Key>
-            <PropertyRef Name="HareketID" />
-          </Key>
-          <Property Name="HareketID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Urun" Type="Int32" />
-          <Property Name="HareketTuru" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
-          <Property Name="Miktar" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="Tarih" Type="DateTime" Precision="0" />
-          <Property Name="Aciklama" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="TblUrun" Relationship="DbOtelModel.FK_TblUrunHareket_TblUrun" FromRole="TblUrunHareket" ToRole="TblUrun" />
-        </EntityType>
-        <Association Name="FK_TblUrunHareket_TblUrun">
-          <End Type="DbOtelModel.TblUrun" Role="TblUrun" Multiplicity="0..1" />
-          <End Type="DbOtelModel.TblUrunHareket" Role="TblUrunHareket" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TblUrun">
-              <PropertyRef Name="UrunID" />
-            </Principal>
-            <Dependent Role="TblUrunHareket">
-              <PropertyRef Name="Urun" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="TblRezervasyon">
-          <Key>
-            <PropertyRef Name="RezervasyonID" />
-          </Key>
-          <Property Name="RezervasyonID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Misafir" Type="Int32" />
-          <Property Name="GirisTarih" Type="DateTime" Precision="0" />
-          <Property Name="CikisTarih" Type="DateTime" Precision="0" />
-          <Property Name="Kisi" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="Oda" Type="Int32" />
-          <Property Name="RezervasyonAdSoyad" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="Telefon" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Aciklana" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="Durum" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="TblDurum" Relationship="DbOtelModel.FK_TblRezervasyon_TblDurum" FromRole="TblRezervasyon" ToRole="TblDurum" />
-          <NavigationProperty Name="TblMisafir" Relationship="DbOtelModel.FK_TblRezervasyon_TblMisafir" FromRole="TblRezervasyon" ToRole="TblMisafir" />
-          <NavigationProperty Name="TblOda" Relationship="DbOtelModel.FK_TblRezervasyon_TblOda" FromRole="TblRezervasyon" ToRole="TblOda" />
-        </EntityType>
-        <Association Name="FK_TblRezervasyon_TblDurum">
-          <End Type="DbOtelModel.TblDurum" Role="TblDurum" Multiplicity="1" />
-          <End Type="DbOtelModel.TblRezervasyon" Role="TblRezervasyon" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TblDurum">
-              <PropertyRef Name="DurumID" />
-            </Principal>
-            <Dependent Role="TblRezervasyon">
-              <PropertyRef Name="Durum" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TblRezervasyon_TblMisafir">
-          <End Type="DbOtelModel.TblMisafir" Role="TblMisafir" Multiplicity="0..1" />
-          <End Type="DbOtelModel.TblRezervasyon" Role="TblRezervasyon" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TblMisafir">
-              <PropertyRef Name="MisafirID" />
-            </Principal>
-            <Dependent Role="TblRezervasyon">
-              <PropertyRef Name="Misafir" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TblRezervasyon_TblOda">
-          <End Type="DbOtelModel.TblOda" Role="TblOda" Multiplicity="0..1" />
-          <End Type="DbOtelModel.TblRezervasyon" Role="TblRezervasyon" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TblOda">
-              <PropertyRef Name="OdaID" />
-            </Principal>
-            <Dependent Role="TblRezervasyon">
-              <PropertyRef Name="Oda" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DbOtelModelStoreContainer" CdmEntityContainer="DbOtelEntities1">
+        <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="DbOtelEntities2">
+          <EntitySetMapping Name="ilcelers">
+            <EntityTypeMapping TypeName="Model1.ilceler">
+              <MappingFragment StoreEntitySet="ilceler">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ilce" ColumnName="ilce" />
+                <ScalarProperty Name="sehir" ColumnName="sehir" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="illers">
+            <EntityTypeMapping TypeName="Model1.iller">
+              <MappingFragment StoreEntitySet="iller">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="sehir" ColumnName="sehir" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="DbOtelModel.sysdiagram">
+            <EntityTypeMapping TypeName="Model1.sysdiagram">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -1237,7 +1411,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TblBirims">
-            <EntityTypeMapping TypeName="DbOtelModel.TblBirim">
+            <EntityTypeMapping TypeName="Model1.TblBirim">
               <MappingFragment StoreEntitySet="TblBirim">
                 <ScalarProperty Name="BirimID" ColumnName="BirimID" />
                 <ScalarProperty Name="BirimAd" ColumnName="BirimAd" />
@@ -1246,7 +1420,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TblDepartmen">
-            <EntityTypeMapping TypeName="DbOtelModel.TblDepartman">
+            <EntityTypeMapping TypeName="Model1.TblDepartman">
               <MappingFragment StoreEntitySet="TblDepartman">
                 <ScalarProperty Name="DepartmanID" ColumnName="DepartmanID" />
                 <ScalarProperty Name="DepartmanAd" ColumnName="DepartmanAd" />
@@ -1256,15 +1430,25 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TblDurums">
-            <EntityTypeMapping TypeName="DbOtelModel.TblDurum">
+            <EntityTypeMapping TypeName="Model1.TblDurum">
               <MappingFragment StoreEntitySet="TblDurum">
                 <ScalarProperty Name="DurumID" ColumnName="DurumID" />
                 <ScalarProperty Name="DurumAd" ColumnName="DurumAd" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="TblEkibimizs">
+            <EntityTypeMapping TypeName="Model1.TblEkibimiz">
+              <MappingFragment StoreEntitySet="TblEkibimiz">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+                <ScalarProperty Name="Unvan" ColumnName="Unvan" />
+                <ScalarProperty Name="Gorsel" ColumnName="Gorsel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="TblGorevs">
-            <EntityTypeMapping TypeName="DbOtelModel.TblGorev">
+            <EntityTypeMapping TypeName="Model1.TblGorev">
               <MappingFragment StoreEntitySet="TblGorev">
                 <ScalarProperty Name="GorevID" ColumnName="GorevID" />
                 <ScalarProperty Name="GorevAd" ColumnName="GorevAd" />
@@ -1273,8 +1457,31 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="TblHakkimdas">
+            <EntityTypeMapping TypeName="Model1.TblHakkimda">
+              <MappingFragment StoreEntitySet="TblHakkimda">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Hakkimda1" ColumnName="Hakkimda1" />
+                <ScalarProperty Name="Hakkimda2" ColumnName="Hakkimda2" />
+                <ScalarProperty Name="Hakkimda3" ColumnName="Hakkimda3" />
+                <ScalarProperty Name="Hakkimda4" ColumnName="Hakkimda4" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblIletisims">
+            <EntityTypeMapping TypeName="Model1.TblIletisim">
+              <MappingFragment StoreEntitySet="TblIletisim">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="Koordinat" ColumnName="Koordinat" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Adress" ColumnName="Adress" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="TblKasas">
-            <EntityTypeMapping TypeName="DbOtelModel.TblKasa">
+            <EntityTypeMapping TypeName="Model1.TblKasa">
               <MappingFragment StoreEntitySet="TblKasa">
                 <ScalarProperty Name="KasaID" ColumnName="KasaID" />
                 <ScalarProperty Name="KasaAdi" ColumnName="KasaAdi" />
@@ -1286,7 +1493,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TblKurs">
-            <EntityTypeMapping TypeName="DbOtelModel.TblKur">
+            <EntityTypeMapping TypeName="Model1.TblKur">
               <MappingFragment StoreEntitySet="TblKur">
                 <ScalarProperty Name="KurId" ColumnName="KurId" />
                 <ScalarProperty Name="KurAd" ColumnName="KurAd" />
@@ -1297,11 +1504,40 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="TblMailBirakanlars">
+            <EntityTypeMapping TypeName="Model1.TblMailBirakanlar">
+              <MappingFragment StoreEntitySet="TblMailBirakanlar">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblMesajs">
+            <EntityTypeMapping TypeName="Model1.TblMesaj">
+              <MappingFragment StoreEntitySet="TblMesaj">
+                <ScalarProperty Name="MesajID" ColumnName="MesajID" />
+                <ScalarProperty Name="Gonderen" ColumnName="Gonderen" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Konu" ColumnName="Konu" />
+                <ScalarProperty Name="Mesaj" ColumnName="Mesaj" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblMesaj2">
+            <EntityTypeMapping TypeName="Model1.TblMesaj2">
+              <MappingFragment StoreEntitySet="TblMesaj2">
+                <ScalarProperty Name="MesajID" ColumnName="MesajID" />
+                <ScalarProperty Name="Gonderen" ColumnName="Gonderen" />
+                <ScalarProperty Name="Alici" ColumnName="Alici" />
+                <ScalarProperty Name="Konu" ColumnName="Konu" />
+                <ScalarProperty Name="Mesaj" ColumnName="Mesaj" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="TblMisafirs">
-            <EntityTypeMapping TypeName="DbOtelModel.TblMisafir">
+            <EntityTypeMapping TypeName="Model1.TblMisafir">
               <MappingFragment StoreEntitySet="TblMisafir">
-                <ScalarProperty Name="ilce" ColumnName="ilce" />
-                <ScalarProperty Name="sehir" ColumnName="sehir" />
                 <ScalarProperty Name="MisafirID" ColumnName="MisafirID" />
                 <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
                 <ScalarProperty Name="TC" ColumnName="TC" />
@@ -1312,12 +1548,14 @@
                 <ScalarProperty Name="KimlikFoto1" ColumnName="KimlikFoto1" />
                 <ScalarProperty Name="KimlikFoto2" ColumnName="KimlikFoto2" />
                 <ScalarProperty Name="Ulke" ColumnName="Ulke" />
+                <ScalarProperty Name="sehir" ColumnName="sehir" />
+                <ScalarProperty Name="ilce" ColumnName="ilce" />
                 <ScalarProperty Name="Durum" ColumnName="Durum" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TblOdas">
-            <EntityTypeMapping TypeName="DbOtelModel.TblOda">
+            <EntityTypeMapping TypeName="Model1.TblOda">
               <MappingFragment StoreEntitySet="TblOda">
                 <ScalarProperty Name="OdaID" ColumnName="OdaID" />
                 <ScalarProperty Name="OdaNo" ColumnName="OdaNo" />
@@ -1330,12 +1568,8 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TblPersonels">
-            <EntityTypeMapping TypeName="DbOtelModel.TblPersonel">
+            <EntityTypeMapping TypeName="Model1.TblPersonel">
               <MappingFragment StoreEntitySet="TblPersonel">
-                <ScalarProperty Name="Yetki" ColumnName="Yetki" />
-                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
-                <ScalarProperty Name="KimlikArka" ColumnName="KimlikArka" />
-                <ScalarProperty Name="KimlikOn" ColumnName="KimlikOn" />
                 <ScalarProperty Name="PersonelID" ColumnName="PersonelID" />
                 <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
                 <ScalarProperty Name="TC" ColumnName="TC" />
@@ -1347,12 +1581,35 @@
                 <ScalarProperty Name="Departman" ColumnName="Departman" />
                 <ScalarProperty Name="Gorev" ColumnName="Gorev" />
                 <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="KimlikOn" ColumnName="KimlikOn" />
+                <ScalarProperty Name="KimlikArka" ColumnName="KimlikArka" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="Yetki" ColumnName="Yetki" />
+                <ScalarProperty Name="Durum" ColumnName="Durum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblRezervasyons">
+            <EntityTypeMapping TypeName="Model1.TblRezervasyon">
+              <MappingFragment StoreEntitySet="TblRezervasyon">
+                <ScalarProperty Name="RezervasyonID" ColumnName="RezervasyonID" />
+                <ScalarProperty Name="Misafir" ColumnName="Misafir" />
+                <ScalarProperty Name="GirisTarih" ColumnName="GirisTarih" />
+                <ScalarProperty Name="CikisTarih" ColumnName="CikisTarih" />
+                <ScalarProperty Name="Kisi" ColumnName="Kisi" />
+                <ScalarProperty Name="Oda" ColumnName="Oda" />
+                <ScalarProperty Name="RezervasyonAdSoyad" ColumnName="RezervasyonAdSoyad" />
+                <ScalarProperty Name="Kisi2" ColumnName="Kisi2" />
+                <ScalarProperty Name="Kisi3" ColumnName="Kisi3" />
+                <ScalarProperty Name="Kisi4" ColumnName="Kisi4" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Aciklana" ColumnName="Aciklana" />
                 <ScalarProperty Name="Durum" ColumnName="Durum" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TblTelefons">
-            <EntityTypeMapping TypeName="DbOtelModel.TblTelefon">
+            <EntityTypeMapping TypeName="Model1.TblTelefon">
               <MappingFragment StoreEntitySet="TblTelefon">
                 <ScalarProperty Name="TelefonID" ColumnName="TelefonID" />
                 <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
@@ -1362,7 +1619,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TblUlkes">
-            <EntityTypeMapping TypeName="DbOtelModel.TblUlke">
+            <EntityTypeMapping TypeName="Model1.TblUlke">
               <MappingFragment StoreEntitySet="TblUlke">
                 <ScalarProperty Name="UlkeID" ColumnName="UlkeID" />
                 <ScalarProperty Name="UlkeAd" ColumnName="UlkeAd" />
@@ -1370,7 +1627,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TblUruns">
-            <EntityTypeMapping TypeName="DbOtelModel.TblUrun">
+            <EntityTypeMapping TypeName="Model1.TblUrun">
               <MappingFragment StoreEntitySet="TblUrun">
                 <ScalarProperty Name="UrunID" ColumnName="UrunID" />
                 <ScalarProperty Name="UrunAd" ColumnName="UrunAd" />
@@ -1384,7 +1641,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TblUrunGrups">
-            <EntityTypeMapping TypeName="DbOtelModel.TblUrunGrup">
+            <EntityTypeMapping TypeName="Model1.TblUrunGrup">
               <MappingFragment StoreEntitySet="TblUrunGrup">
                 <ScalarProperty Name="UrunGrupID" ColumnName="UrunGrupID" />
                 <ScalarProperty Name="UrunGrupAd" ColumnName="UrunGrupAd" />
@@ -1392,48 +1649,26 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ilcelers">
-            <EntityTypeMapping TypeName="DbOtelModel.ilceler">
-              <MappingFragment StoreEntitySet="ilceler">
-                <ScalarProperty Name="sehir" ColumnName="sehir" />
-                <ScalarProperty Name="ilce" ColumnName="ilce" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="illers">
-            <EntityTypeMapping TypeName="DbOtelModel.iller">
-              <MappingFragment StoreEntitySet="iller">
-                <ScalarProperty Name="sehir" ColumnName="sehir" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="TblUrunHarekets">
-            <EntityTypeMapping TypeName="DbOtelModel.TblUrunHareket">
+            <EntityTypeMapping TypeName="Model1.TblUrunHareket">
               <MappingFragment StoreEntitySet="TblUrunHareket">
-                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
-                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
-                <ScalarProperty Name="Miktar" ColumnName="Miktar" />
-                <ScalarProperty Name="HareketTuru" ColumnName="HareketTuru" />
-                <ScalarProperty Name="Urun" ColumnName="Urun" />
                 <ScalarProperty Name="HareketID" ColumnName="HareketID" />
+                <ScalarProperty Name="Urun" ColumnName="Urun" />
+                <ScalarProperty Name="HareketTuru" ColumnName="HareketTuru" />
+                <ScalarProperty Name="Miktar" ColumnName="Miktar" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TblRezervasyons">
-            <EntityTypeMapping TypeName="DbOtelModel.TblRezervasyon">
-              <MappingFragment StoreEntitySet="TblRezervasyon">
-                <ScalarProperty Name="Durum" ColumnName="Durum" />
-                <ScalarProperty Name="Aciklana" ColumnName="Aciklana" />
+          <EntitySetMapping Name="TblYeniKayits">
+            <EntityTypeMapping TypeName="Model1.TblYeniKayit">
+              <MappingFragment StoreEntitySet="TblYeniKayit">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
                 <ScalarProperty Name="Telefon" ColumnName="Telefon" />
-                <ScalarProperty Name="RezervasyonAdSoyad" ColumnName="RezervasyonAdSoyad" />
-                <ScalarProperty Name="Oda" ColumnName="Oda" />
-                <ScalarProperty Name="Kisi" ColumnName="Kisi" />
-                <ScalarProperty Name="CikisTarih" ColumnName="CikisTarih" />
-                <ScalarProperty Name="GirisTarih" ColumnName="GirisTarih" />
-                <ScalarProperty Name="Misafir" ColumnName="Misafir" />
-                <ScalarProperty Name="RezervasyonID" ColumnName="RezervasyonID" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

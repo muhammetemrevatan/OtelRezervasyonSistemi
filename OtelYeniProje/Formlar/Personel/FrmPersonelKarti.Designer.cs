@@ -73,6 +73,8 @@
             this.pictureEditKimlikArka = new DevExpress.XtraEditors.PictureEdit();
             this.pictureEditKimlikOn = new DevExpress.XtraEditors.PictureEdit();
             this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.pictureEdit13 = new DevExpress.XtraEditors.PictureEdit();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.TxtAciklama = new DevExpress.XtraEditors.MemoEdit();
@@ -89,8 +91,6 @@
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.pictureEdit14 = new DevExpress.XtraEditors.PictureEdit();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtAdSoyad.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditDepartmant.Properties)).BeginInit();
@@ -221,7 +221,7 @@
             // 
             // dateEditGiris
             // 
-            this.dateEditGiris.EditValue = new System.DateTime(2022, 7, 5, 14, 19, 16, 171);
+            this.dateEditGiris.EditValue = null;
             this.dateEditGiris.Location = new System.Drawing.Point(346, 61);
             this.dateEditGiris.Name = "dateEditGiris";
             this.dateEditGiris.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -429,7 +429,7 @@
             // BtnGuncelle
             // 
             this.BtnGuncelle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnGuncelle.ImageOptions.Image")));
-            this.BtnGuncelle.Location = new System.Drawing.Point(247, 11);
+            this.BtnGuncelle.Location = new System.Drawing.Point(359, 11);
             this.BtnGuncelle.Name = "BtnGuncelle";
             this.BtnGuncelle.Size = new System.Drawing.Size(106, 43);
             this.BtnGuncelle.TabIndex = 2;
@@ -624,6 +624,22 @@
             this.groupControl6.TabIndex = 4;
             this.groupControl6.Text = "groupControl6";
             // 
+            // labelControl15
+            // 
+            this.labelControl15.Location = new System.Drawing.Point(240, 111);
+            this.labelControl15.Name = "labelControl15";
+            this.labelControl15.Size = new System.Drawing.Size(0, 13);
+            this.labelControl15.TabIndex = 27;
+            this.labelControl15.Visible = false;
+            // 
+            // labelControl14
+            // 
+            this.labelControl14.Location = new System.Drawing.Point(5, 111);
+            this.labelControl14.Name = "labelControl14";
+            this.labelControl14.Size = new System.Drawing.Size(0, 13);
+            this.labelControl14.TabIndex = 26;
+            this.labelControl14.Visible = false;
+            // 
             // pictureEdit13
             // 
             this.pictureEdit13.EditValue = ((object)(resources.GetObject("pictureEdit13.EditValue")));
@@ -802,24 +818,6 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Yetki1";
             this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // labelControl14
-            // 
-            this.labelControl14.Location = new System.Drawing.Point(5, 111);
-            this.labelControl14.Name = "labelControl14";
-            this.labelControl14.Size = new System.Drawing.Size(69, 13);
-            this.labelControl14.TabIndex = 26;
-            this.labelControl14.Text = "labelControl14";
-            this.labelControl14.Visible = false;
-            // 
-            // labelControl15
-            // 
-            this.labelControl15.Location = new System.Drawing.Point(240, 111);
-            this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(69, 13);
-            this.labelControl15.TabIndex = 27;
-            this.labelControl15.Text = "labelControl15";
-            this.labelControl15.Visible = false;
             // 
             // FrmPersonelKarti
             // 

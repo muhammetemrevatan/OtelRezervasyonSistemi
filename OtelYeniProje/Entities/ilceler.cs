@@ -7,25 +7,24 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OtelYeniProje.Entity
+namespace OtelYeniProje.Entities
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class iller
+    public partial class ilceler
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public iller()
+        public ilceler()
         {
-            this.ilcelers = new HashSet<ilceler>();
             this.TblMisafirs = new HashSet<TblMisafir>();
         }
     
         public int id { get; set; }
-        public string sehir { get; set; }
+        public string ilce { get; set; }
+        public int sehir { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ilceler> ilcelers { get; set; }
+        public virtual iller iller { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TblMisafir> TblMisafirs { get; set; }
     }

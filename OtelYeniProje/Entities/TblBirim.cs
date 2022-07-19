@@ -7,18 +7,25 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OtelYeniProje.Entity
+namespace OtelYeniProje.Entities
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class TblTelefon
+    public partial class TblBirim
     {
-        public int TelefonID { get; set; }
-        public string Aciklama { get; set; }
-        public string Telefon { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TblBirim()
+        {
+            this.TblUruns = new HashSet<TblUrun>();
+        }
+    
+        public int BirimID { get; set; }
+        public string BirimAd { get; set; }
         public Nullable<int> Durum { get; set; }
     
         public virtual TblDurum TblDurum { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TblUrun> TblUruns { get; set; }
     }
 }

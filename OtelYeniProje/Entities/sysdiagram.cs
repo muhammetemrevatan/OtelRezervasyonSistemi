@@ -7,20 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OtelYeniProje.Entity
+namespace OtelYeniProje.Entities
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class TblKasa
+    public partial class sysdiagram
     {
-        public int KasaID { get; set; }
-        public string KasaAdi { get; set; }
-        public Nullable<decimal> Bakiye { get; set; }
-        public Nullable<decimal> Giren { get; set; }
-        public Nullable<decimal> Cikan { get; set; }
-        public Nullable<int> Durum { get; set; }
-    
-        public virtual TblDurum TblDurum { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

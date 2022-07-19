@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using OtelYeniProje.Entity;
+using OtelYeniProje.Entities;
 
 namespace OtelYeniProje.Formlar.Rezervasyon
 {
@@ -18,7 +18,7 @@ namespace OtelYeniProje.Formlar.Rezervasyon
             InitializeComponent();
         }
 
-        DbOtelEntities1 db = new DbOtelEntities1();
+        DbOtelEntities2 db = new DbOtelEntities2();
 
         private void FrmTumRezervasyonlar_Load(object sender, EventArgs e)
         {
@@ -34,6 +34,15 @@ namespace OtelYeniProje.Formlar.Rezervasyon
                                            x.Telefon,
                                            x.TblDurum.DurumAd
                                        }).ToList();
+        }
+
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            FrmRezervasyonKarti frm = new FrmRezervasyonKarti();
+            frm.BtnGuncelleChanged(true);
+            frm.BtnKaydetChanged(false);
+            frm.id = int.Parse(gridView1.GetFocusedRowCellValue("RezervasyonID").ToString());
+            frm.Show();
         }
     }
 }

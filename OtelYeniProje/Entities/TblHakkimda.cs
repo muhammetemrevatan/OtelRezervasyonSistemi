@@ -7,14 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OtelYeniProje.Entity
+namespace OtelYeniProje.Entities
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class TblUlke
+    public partial class TblHakkimda
     {
-        public int UlkeID { get; set; }
-        public string UlkeAd { get; set; }
+        public int ID { get; set; }
+        public string Hakkimda1 { get; set; }
+        public string Hakkimda2 { get; set; }
+        public string Hakkimda3 { get; set; }
+        public string Hakkimda4 { get; set; }
     }
 }

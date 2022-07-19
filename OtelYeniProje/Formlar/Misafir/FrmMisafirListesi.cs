@@ -1,4 +1,4 @@
-﻿using OtelYeniProje.Entity;
+﻿using OtelYeniProje.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +18,7 @@ namespace OtelYeniProje.Formlar.Misafir
             InitializeComponent();
         }
 
-        DbOtelEntities1 db = new DbOtelEntities1();
+        DbOtelEntities2 db = new DbOtelEntities2();
 
         private void FrmMisafirListesi_Load(object sender, EventArgs e)
         {
@@ -39,8 +39,10 @@ namespace OtelYeniProje.Formlar.Misafir
         {
             FrmMisafirKarti fr = new FrmMisafirKarti();
             fr.btnGuncelleChanged(true);
+            fr.btnKaydetChanged(false);
             fr.id = int.Parse(gridView1.GetFocusedRowCellValue("MisafirID").ToString());
             fr.Show();
+            this.Close();
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using DevExpress.XtraEditors;
-using OtelYeniProje.Entity;
+using OtelYeniProje.Entities;
 using OtelYeniProje.Repositories;
 using System;
 using System.Collections.Generic;
@@ -20,7 +20,7 @@ namespace OtelYeniProje.Formlar.Urun
             InitializeComponent();
         }
 
-        DbOtelEntities1 dbEntities1 = new DbOtelEntities1();
+        DbOtelEntities2 dbEntities1 = new DbOtelEntities2();
         Repository<TblUrunHareket> repo = new Repository<TblUrunHareket>();
         TblUrunHareket tblUrunHareket = new TblUrunHareket();
         public int id;
@@ -28,10 +28,7 @@ namespace OtelYeniProje.Formlar.Urun
         private void FrmUrunHareketTanimi_Load(object sender, EventArgs e)
         {
             //id değeri
-            TxtID.Text = id.ToString();
             TxtID.Enabled = false;
-
-
             // Ürün listesi
             lookUpEditUrun.Properties.DataSource = (from field in dbEntities1.TblUruns
                                                          select new
@@ -61,28 +58,59 @@ namespace OtelYeniProje.Formlar.Urun
             BtnGuncelle.Visible = b;
         }
 
+        public void BtnKaydetVisibled(bool b)
+        {
+            BtnKaydet.Visible = b;
+        }
+
         private void BtnKaydet_Click(object sender, EventArgs e)
         {
-            tblUrunHareket.Urun = int.Parse(lookUpEditUrun.EditValue.ToString());
-            tblUrunHareket.Tarih = DateTime.Parse(dateEdit1.Text);
-            tblUrunHareket.HareketTuru = comboBox1.Text;
-            tblUrunHareket.Miktar = decimal.Parse(TxtMiktar.Text);
-            tblUrunHareket.Aciklama = TxtAciklama.Text;
-            repo.TAdd(tblUrunHareket);
-            XtraMessageBox.Show("Ürün Hareketi Eklendi.");
+            if(dateEdit1.Text == "" ||lookUpEditUrun.EditValue == null || comboBox1.Text == "" ||TxtMiktar.Text == "")
+            {
+                dateEdit1.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+                lookUpEditUrun.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+                comboBox1.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+                TxtMiktar.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+                XtraMessageBox.Show("Ürün Hareketi Eklenemedi.", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                tblUrunHareket.Urun = int.Parse(lookUpEditUrun.EditValue.ToString());
+                tblUrunHareket.Tarih = DateTime.Parse(dateEdit1.Text);
+                tblUrunHareket.HareketTuru = comboBox1.Text;
+                tblUrunHareket.Miktar = decimal.Parse(TxtMiktar.Text);
+                tblUrunHareket.Aciklama = TxtAciklama.Text;
+                repo.TAdd(tblUrunHareket);
+                XtraMessageBox.Show("Ürün Hareketi Eklendi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            
 
         }
 
         private void BtnGuncelle_Click(object sender, EventArgs e)
         {
             var urun = repo.Find(x => x.HareketID == id);
-            urun.Urun = int.Parse(lookUpEditUrun.EditValue.ToString());
-            urun.Tarih = DateTime.Parse(dateEdit1.Text);
-            urun.HareketTuru = comboBox1.Text;
-            urun.Miktar = decimal.Parse(TxtMiktar.Text);
-            urun.Aciklama = TxtAciklama.Text;
-            repo.TUpdate(urun);
-            XtraMessageBox.Show("Ürün Hareketi Güncellendi.");
+            if (dateEdit1.Text == "" || lookUpEditUrun.EditValue == null || comboBox1.Text == "" || TxtMiktar.Text == "")
+            {
+                dateEdit1.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+                lookUpEditUrun.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+                comboBox1.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+                TxtMiktar.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+                XtraMessageBox.Show("Ürün Hareketi Eklenemedi.", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                urun.Urun = int.Parse(lookUpEditUrun.EditValue.ToString());
+                urun.Tarih = DateTime.Parse(dateEdit1.Text);
+                urun.HareketTuru = comboBox1.Text;
+                urun.Miktar = decimal.Parse(TxtMiktar.Text);
+                urun.Aciklama = TxtAciklama.Text;
+                repo.TUpdate(urun);
+                XtraMessageBox.Show("Ürün Hareketi Güncellendi.");
+                this.Close();
+            }
+            
         }
     }
 }

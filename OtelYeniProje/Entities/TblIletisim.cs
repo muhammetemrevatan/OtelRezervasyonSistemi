@@ -7,20 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OtelYeniProje.Entity
+namespace OtelYeniProje.Entities
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class TblUrunHareket
+    public partial class TblIletisim
     {
-        public int HareketID { get; set; }
-        public Nullable<int> Urun { get; set; }
-        public string HareketTuru { get; set; }
-        public Nullable<decimal> Miktar { get; set; }
-        public Nullable<System.DateTime> Tarih { get; set; }
+        public int ID { get; set; }
         public string Aciklama { get; set; }
-    
-        public virtual TblUrun TblUrun { get; set; }
+        public string Koordinat { get; set; }
+        public string Telefon { get; set; }
+        public string Mail { get; set; }
+        public string Adress { get; set; }
     }
 }
