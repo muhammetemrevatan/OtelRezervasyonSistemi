@@ -705,5 +705,20 @@
       <End Role="TblUrun" EntitySet="TblUruns" />
       <End Role="TblUrunHareket" EntitySet="TblUrunHarekets" />
     </AssociationSet>
+    <EntitySet Name="TblOnRezervasyons" EntityType="Model1.TblOnRezervasyon" />
   </EntityContainer>
+  <EntityType Name="TblOnRezervasyon">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AdSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GirisTarih" Type="DateTime" Precision="0" />
+    <Property Name="CikisTarih" Type="DateTime" Precision="0" />
+    <Property Name="Kisi" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Aciklama" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Tarih" Type="DateTime" Precision="0" />
+  </EntityType>
 </Schema>

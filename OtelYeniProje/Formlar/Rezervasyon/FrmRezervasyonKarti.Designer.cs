@@ -62,6 +62,9 @@
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.TxtAciklama = new DevExpress.XtraEditors.MemoEdit();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
+            this.labelKisi4 = new System.Windows.Forms.Label();
+            this.labelKisi3 = new System.Windows.Forms.Label();
+            this.labelKisi2 = new System.Windows.Forms.Label();
             this.lookUpEditKisi4 = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.pictureEdit10 = new DevExpress.XtraEditors.PictureEdit();
@@ -71,9 +74,6 @@
             this.lookUpEditKisi2 = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.pictureEdit8 = new DevExpress.XtraEditors.PictureEdit();
-            this.labelKisi2 = new System.Windows.Forms.Label();
-            this.labelKisi3 = new System.Windows.Forms.Label();
-            this.labelKisi4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditOda.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit6.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit5.Properties)).BeginInit();
@@ -414,7 +414,7 @@
             // BtnGuncelle
             // 
             this.BtnGuncelle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnGuncelle.ImageOptions.Image")));
-            this.BtnGuncelle.Location = new System.Drawing.Point(359, 11);
+            this.BtnGuncelle.Location = new System.Drawing.Point(359, 10);
             this.BtnGuncelle.Name = "BtnGuncelle";
             this.BtnGuncelle.Size = new System.Drawing.Size(106, 43);
             this.BtnGuncelle.TabIndex = 2;
@@ -502,6 +502,33 @@
             this.groupControl5.Size = new System.Drawing.Size(489, 91);
             this.groupControl5.TabIndex = 30;
             this.groupControl5.Text = "groupControl5";
+            // 
+            // labelKisi4
+            // 
+            this.labelKisi4.AutoSize = true;
+            this.labelKisi4.Location = new System.Drawing.Point(112, 64);
+            this.labelKisi4.Name = "labelKisi4";
+            this.labelKisi4.Size = new System.Drawing.Size(223, 13);
+            this.labelKisi4.TabIndex = 34;
+            this.labelKisi4.Text = "Bu alanı etkinleştirmek için kişi sayısını arttırın.";
+            // 
+            // labelKisi3
+            // 
+            this.labelKisi3.AutoSize = true;
+            this.labelKisi3.Location = new System.Drawing.Point(112, 38);
+            this.labelKisi3.Name = "labelKisi3";
+            this.labelKisi3.Size = new System.Drawing.Size(223, 13);
+            this.labelKisi3.TabIndex = 33;
+            this.labelKisi3.Text = "Bu alanı etkinleştirmek için kişi sayısını arttırın.";
+            // 
+            // labelKisi2
+            // 
+            this.labelKisi2.AutoSize = true;
+            this.labelKisi2.Location = new System.Drawing.Point(112, 12);
+            this.labelKisi2.Name = "labelKisi2";
+            this.labelKisi2.Size = new System.Drawing.Size(223, 13);
+            this.labelKisi2.TabIndex = 32;
+            this.labelKisi2.Text = "Bu alanı etkinleştirmek için kişi sayısını arttırın.";
             // 
             // lookUpEditKisi4
             // 
@@ -604,33 +631,6 @@
             this.pictureEdit8.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit8.Size = new System.Drawing.Size(20, 20);
             this.pictureEdit8.TabIndex = 0;
-            // 
-            // labelKisi2
-            // 
-            this.labelKisi2.AutoSize = true;
-            this.labelKisi2.Location = new System.Drawing.Point(112, 12);
-            this.labelKisi2.Name = "labelKisi2";
-            this.labelKisi2.Size = new System.Drawing.Size(223, 13);
-            this.labelKisi2.TabIndex = 32;
-            this.labelKisi2.Text = "Bu alanı etkinleştirmek için kişi sayısını arttırın.";
-            // 
-            // labelKisi3
-            // 
-            this.labelKisi3.AutoSize = true;
-            this.labelKisi3.Location = new System.Drawing.Point(112, 38);
-            this.labelKisi3.Name = "labelKisi3";
-            this.labelKisi3.Size = new System.Drawing.Size(223, 13);
-            this.labelKisi3.TabIndex = 33;
-            this.labelKisi3.Text = "Bu alanı etkinleştirmek için kişi sayısını arttırın.";
-            // 
-            // labelKisi4
-            // 
-            this.labelKisi4.AutoSize = true;
-            this.labelKisi4.Location = new System.Drawing.Point(112, 64);
-            this.labelKisi4.Name = "labelKisi4";
-            this.labelKisi4.Size = new System.Drawing.Size(223, 13);
-            this.labelKisi4.TabIndex = 34;
-            this.labelKisi4.Text = "Bu alanı etkinleştirmek için kişi sayısını arttırın.";
             // 
             // FrmRezervasyonKarti
             // 

@@ -113,3 +113,7 @@ C:\Users\vatan\source\repos\Otel\OtelYeniProje\obj\Debug\OtelYeniProje.Formlar.A
 C:\Users\vatan\source\repos\Otel\OtelYeniProje\obj\Debug\OtelYeniProje.Formlar.Araclar.FrmKurlar.resources
 C:\Users\vatan\source\repos\Otel\OtelYeniProje\obj\Debug\OtelYeniProje.Formlar.Araclar.FrmYoutube.resources
 C:\Users\vatan\source\repos\Otel\OtelYeniProje\obj\Debug\OtelYeniProje.Formlar.WebSite.FrmYeniKayit.resources
+C:\Users\vatan\source\repos\Otel\OtelYeniProje\obj\Debug\OtelYeniProje.Formlar.WebSite.FrmOnRezervasyon.resources
+C:\Users\vatan\source\repos\Otel\OtelYeniProje\obj\Debug\OtelYeniProje.Formlar.WebSite.FrmOnRezervasyonKarti.resources
+C:\Users\vatan\source\repos\Otel\OtelYeniProje\obj\Debug\OtelYeniProje.Formlar.WebSite.FrmMesajKarti.resources
+C:\Users\vatan\source\repos\Otel\OtelYeniProje\obj\Debug\OtelYeniProje.Formlar.WebSite.FrmGelenMesaj.resources

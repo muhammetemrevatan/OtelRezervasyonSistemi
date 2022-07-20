@@ -168,6 +168,20 @@
     <Property Name="Telefon" Type="char" MaxLength="4" />
     <Property Name="Durum" Type="int" />
   </EntityType>
+  <EntityType Name="TblOnRezervasyon">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Mail" Type="nvarchar" MaxLength="50" />
+    <Property Name="AdSoyad" Type="nvarchar" MaxLength="50" />
+    <Property Name="GirisTarih" Type="date" />
+    <Property Name="CikisTarih" Type="date" />
+    <Property Name="Kisi" Type="nvarchar" MaxLength="1" />
+    <Property Name="Telefon" Type="nvarchar" MaxLength="50" />
+    <Property Name="Aciklama" Type="nvarchar" MaxLength="50" />
+    <Property Name="Tarih" Type="date" />
+  </EntityType>
   <EntityType Name="TblPersonel">
     <Key>
       <PropertyRef Name="PersonelID" />
@@ -559,6 +573,7 @@
     <EntitySet Name="TblMesaj2" EntityType="Self.TblMesaj2" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TblMisafir" EntityType="Self.TblMisafir" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TblOda" EntityType="Self.TblOda" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblOnRezervasyon" EntityType="Self.TblOnRezervasyon" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TblPersonel" EntityType="Self.TblPersonel" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TblRezervasyon" EntityType="Self.TblRezervasyon" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TblTelefon" EntityType="Self.TblTelefon" Schema="dbo" store:Type="Tables" />

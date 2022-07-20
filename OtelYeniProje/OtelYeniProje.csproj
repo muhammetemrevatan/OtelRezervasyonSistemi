@@ -131,6 +131,9 @@
     <Compile Include="Entities\TblOda.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\TblOnRezervasyon.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entities\TblPersonel.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -329,6 +332,36 @@
     <Compile Include="Formlar\Urun\FrmUrunListesi.Designer.cs">
       <DependentUpon>FrmUrunListesi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formlar\WebSite\FrmGelenMesaj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\WebSite\FrmGelenMesaj.Designer.cs">
+      <DependentUpon>FrmGelenMesaj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\WebSite\FrmGidenMesaj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\WebSite\FrmGidenMesaj.Designer.cs">
+      <DependentUpon>FrmGidenMesaj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\WebSite\FrmMesajKarti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\WebSite\FrmMesajKarti.Designer.cs">
+      <DependentUpon>FrmMesajKarti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\WebSite\FrmOnRezervasyon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\WebSite\FrmOnRezervasyon.Designer.cs">
+      <DependentUpon>FrmOnRezervasyon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\WebSite\FrmOnRezervasyonKarti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\WebSite\FrmOnRezervasyonKarti.Designer.cs">
+      <DependentUpon>FrmOnRezervasyonKarti.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formlar\WebSite\FrmYeniKayit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -425,6 +458,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\Urun\FrmUrunListesi.resx">
       <DependentUpon>FrmUrunListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\WebSite\FrmGelenMesaj.resx">
+      <DependentUpon>FrmGelenMesaj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\WebSite\FrmGidenMesaj.resx">
+      <DependentUpon>FrmGidenMesaj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\WebSite\FrmMesajKarti.resx">
+      <DependentUpon>FrmMesajKarti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\WebSite\FrmOnRezervasyon.resx">
+      <DependentUpon>FrmOnRezervasyon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\WebSite\FrmOnRezervasyonKarti.resx">
+      <DependentUpon>FrmOnRezervasyonKarti.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\WebSite\FrmYeniKayit.resx">
       <DependentUpon>FrmYeniKayit.cs</DependentUpon>

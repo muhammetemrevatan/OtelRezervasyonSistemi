@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Model1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Model1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ilceler">
           <Key>
             <PropertyRef Name="id" />
@@ -172,6 +172,20 @@
           <Property Name="Aciklama" Type="nvarchar" MaxLength="200" />
           <Property Name="Telefon" Type="char" MaxLength="4" />
           <Property Name="Durum" Type="int" />
+        </EntityType>
+        <EntityType Name="TblOnRezervasyon">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Mail" Type="nvarchar" MaxLength="50" />
+          <Property Name="AdSoyad" Type="nvarchar" MaxLength="50" />
+          <Property Name="GirisTarih" Type="date" />
+          <Property Name="CikisTarih" Type="date" />
+          <Property Name="Kisi" Type="nvarchar" MaxLength="1" />
+          <Property Name="Telefon" Type="nvarchar" MaxLength="50" />
+          <Property Name="Aciklama" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tarih" Type="date" />
         </EntityType>
         <EntityType Name="TblPersonel">
           <Key>
@@ -564,6 +578,7 @@
           <EntitySet Name="TblMesaj2" EntityType="Self.TblMesaj2" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblMisafir" EntityType="Self.TblMisafir" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblOda" EntityType="Self.TblOda" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblOnRezervasyon" EntityType="Self.TblOnRezervasyon" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblPersonel" EntityType="Self.TblPersonel" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblRezervasyon" EntityType="Self.TblRezervasyon" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblTelefon" EntityType="Self.TblTelefon" Schema="dbo" store:Type="Tables" />
@@ -665,8 +680,7 @@
             <End Role="TblUrunHareket" EntitySet="TblUrunHareket" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Model1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1375,7 +1389,22 @@
             <End Role="TblUrun" EntitySet="TblUruns" />
             <End Role="TblUrunHareket" EntitySet="TblUrunHarekets" />
           </AssociationSet>
+          <EntitySet Name="TblOnRezervasyons" EntityType="Model1.TblOnRezervasyon" />
         </EntityContainer>
+        <EntityType Name="TblOnRezervasyon">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AdSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GirisTarih" Type="DateTime" Precision="0" />
+          <Property Name="CikisTarih" Type="DateTime" Precision="0" />
+          <Property Name="Kisi" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Aciklama" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tarih" Type="DateTime" Precision="0" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1669,6 +1698,21 @@
                 <ScalarProperty Name="Mail" ColumnName="Mail" />
                 <ScalarProperty Name="Telefon" ColumnName="Telefon" />
                 <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblOnRezervasyons">
+            <EntityTypeMapping TypeName="Model1.TblOnRezervasyon">
+              <MappingFragment StoreEntitySet="TblOnRezervasyon">
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Kisi" ColumnName="Kisi" />
+                <ScalarProperty Name="CikisTarih" ColumnName="CikisTarih" />
+                <ScalarProperty Name="GirisTarih" ColumnName="GirisTarih" />
+                <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

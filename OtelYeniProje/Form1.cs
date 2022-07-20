@@ -219,5 +219,30 @@ namespace OtelYeniProje
             fr.MdiParent = this;
             fr.Show();
         }
+
+        private void BtnOnRezervasyonlar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.WebSite.FrmOnRezervasyon fr = new Formlar.WebSite.FrmOnRezervasyon();
+            fr.MdiParent = this;
+            fr.Show();
+        }
+
+        private void BtnGelenMesajlar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.WebSite.FrmGelenMesaj fr = new Formlar.WebSite.FrmGelenMesaj();
+            fr.MdiParent = this;
+            fr.Show();
+        }
+
+        private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.WebSite.FrmMesajKarti fr = new Formlar.WebSite.FrmMesajKarti();
+            fr.Show();
+        }
+
+        private void BtnGidenMesajlar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
     }
 }
