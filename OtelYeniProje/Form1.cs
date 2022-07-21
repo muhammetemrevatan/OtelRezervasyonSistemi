@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -242,7 +243,63 @@ namespace OtelYeniProje
 
         private void BtnGidenMesajlar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            Formlar.WebSite.FrmGidenMesaj fr = new Formlar.WebSite.FrmGidenMesaj();
+            fr.MdiParent = this;
+            fr.Show();
+        }
 
+        private void Btniletisim_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.WebSite.Frmiletisim fr = new Formlar.WebSite.Frmiletisim();
+            fr.MdiParent = this;
+            fr.Show();
+        }
+
+        private void BtnAdresKarti_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.WebSite.FrmAdresKarti fr = new Formlar.WebSite.FrmAdresKarti();
+            fr.Show();
+        }
+
+        private void barButtonItem5_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.WebSite.FrmHakkimizda fr = new Formlar.WebSite.FrmHakkimizda();
+            fr.Show();
+        }
+
+        private void barButtonItem5_ItemClick_2(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.AnaForm.FrmAnaForm fr = new Formlar.AnaForm.FrmAnaForm();
+            fr.MdiParent = this;
+            fr.Show();
+        }
+
+        private void BtnGrafik1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Grafikler.FrmGrafik2 fr = new Formlar.Grafikler.FrmGrafik2();
+            fr.MdiParent = this;
+            fr.Show();
+        }
+
+        private void BtnGrafik2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Grafikler.FrmGrafik1 fr = new Formlar.Grafikler.FrmGrafik1();
+            fr.MdiParent = this;
+            fr.Show();
+        }
+
+        private void BtnSifreİslemleri_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Admin.FrmSifreIslemleri fr = new Formlar.Admin.FrmSifreIslemleri();
+            fr.Show();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Thread.Sleep(5000);
+            Formlar.AnaForm.FrmAnaForm fr = new Formlar.AnaForm.FrmAnaForm();
+            fr.MdiParent = this;
+            fr.Show();
         }
     }
 }

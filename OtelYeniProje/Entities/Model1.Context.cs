@@ -12,6 +12,8 @@ namespace OtelYeniProje.Entities
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class DbOtelEntities2 : DbContext
     {
@@ -51,5 +53,11 @@ namespace OtelYeniProje.Entities
         public virtual DbSet<TblUrunHareket> TblUrunHarekets { get; set; }
         public virtual DbSet<TblYeniKayit> TblYeniKayits { get; set; }
         public virtual DbSet<TblOnRezervasyon> TblOnRezervasyons { get; set; }
+        public virtual DbSet<TblAdmin> TblAdmins { get; set; }
+    
+        public virtual ObjectResult<OdaDurum_Result> OdaDurum()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<OdaDurum_Result>("OdaDurum");
+        }
     }
 }

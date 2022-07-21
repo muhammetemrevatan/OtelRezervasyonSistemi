@@ -30,6 +30,15 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
+        <EntityType Name="TblAdmin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Kullanici" Type="nvarchar" MaxLength="20" />
+          <Property Name="Sifre" Type="nvarchar" MaxLength="20" />
+          <Property Name="Rol" Type="nchar" MaxLength="1" />
+        </EntityType>
         <EntityType Name="TblBirim">
           <Key>
             <PropertyRef Name="BirimID" />
@@ -560,10 +569,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="OdaDurum" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="Model1StoreContainer">
           <EntitySet Name="ilceler" EntityType="Self.ilceler" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="iller" EntityType="Self.iller" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblAdmin" EntityType="Self.TblAdmin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblBirim" EntityType="Self.TblBirim" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblDepartman" EntityType="Self.TblDepartman" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblDurum" EntityType="Self.TblDurum" Schema="dbo" store:Type="Tables" />
@@ -1390,6 +1401,8 @@
             <End Role="TblUrunHareket" EntitySet="TblUrunHarekets" />
           </AssociationSet>
           <EntitySet Name="TblOnRezervasyons" EntityType="Model1.TblOnRezervasyon" />
+          <FunctionImport Name="OdaDurum" ReturnType="Collection(Model1.OdaDurum_Result)" />
+          <EntitySet Name="TblAdmins" EntityType="Model1.TblAdmin" />
         </EntityContainer>
         <EntityType Name="TblOnRezervasyon">
           <Key>
@@ -1404,6 +1417,19 @@
           <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Aciklama" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Tarih" Type="DateTime" Precision="0" />
+        </EntityType>
+        <ComplexType Name="OdaDurum_Result">
+          <Property Type="String" Name="DurumAd" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="Sayı" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="TblAdmin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Kullanici" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Sifre" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Rol" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1712,6 +1738,24 @@
                 <ScalarProperty Name="GirisTarih" ColumnName="GirisTarih" />
                 <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
                 <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="OdaDurum" FunctionName="Model1.Store.OdaDurum">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model1.OdaDurum_Result">
+                <ScalarProperty Name="DurumAd" ColumnName="DurumAd" />
+                <ScalarProperty Name="Sayı" ColumnName="Sayı" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="TblAdmins">
+            <EntityTypeMapping TypeName="Model1.TblAdmin">
+              <MappingFragment StoreEntitySet="TblAdmin">
+                <ScalarProperty Name="Rol" ColumnName="Rol" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="Kullanici" ColumnName="Kullanici" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

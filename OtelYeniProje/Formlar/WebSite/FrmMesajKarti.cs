@@ -21,8 +21,10 @@ namespace OtelYeniProje.Formlar.WebSite
         }
 
         public int id;
+        public int id2;
         DbOtelEntities2 dbEntities1 = new DbOtelEntities2();
         Repository<TblMesaj2> repo = new Repository<TblMesaj2>();
+        Repository<TblMesaj> repoiletisim = new Repository<TblMesaj>();
 
         private void BtnVazgec_Click(object sender, EventArgs e)
         {
@@ -38,8 +40,25 @@ namespace OtelYeniProje.Formlar.WebSite
                 TxtKonu.Text = mesaj.Konu;
                 TxtMesaj.Text = mesaj.Mesaj;
                 TxtTarih.Text = mesaj.Tarih.ToString();
+
                 var kisi = dbEntities1.TblYeniKayits.Where(x => x.Mail == mesaj.Gonderen).Select(y => y.AdSoyad).FirstOrDefault();
-                TxtAdSoyad.Text = kisi.ToString();
+                if (kisi != null)
+                {
+                    TxtAdSoyad.Text = kisi.ToString();
+                }
+                else
+                {
+                    TxtAdSoyad.Text = "Admin";
+                }
+                
+            }
+            if (id2 != 0)
+            {
+                var mesaj = repoiletisim.Find(x => x.MesajID == id2);
+                TxtMail.Text = mesaj.Mail;
+                TxtKonu.Text = mesaj.Konu;
+                TxtMesaj.Text = mesaj.Mesaj;
+                TxtAdSoyad.Text = mesaj.Gonderen;
             }
         }
 

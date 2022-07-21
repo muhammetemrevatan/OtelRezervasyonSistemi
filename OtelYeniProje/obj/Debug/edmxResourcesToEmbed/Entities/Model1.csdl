@@ -706,6 +706,8 @@
       <End Role="TblUrunHareket" EntitySet="TblUrunHarekets" />
     </AssociationSet>
     <EntitySet Name="TblOnRezervasyons" EntityType="Model1.TblOnRezervasyon" />
+    <FunctionImport Name="OdaDurum" ReturnType="Collection(Model1.OdaDurum_Result)" />
+    <EntitySet Name="TblAdmins" EntityType="Model1.TblAdmin" />
   </EntityContainer>
   <EntityType Name="TblOnRezervasyon">
     <Key>
@@ -720,5 +722,18 @@
     <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Aciklama" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Tarih" Type="DateTime" Precision="0" />
+  </EntityType>
+  <ComplexType Name="OdaDurum_Result">
+    <Property Type="String" Name="DurumAd" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="Sayı" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="TblAdmin">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Kullanici" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Sifre" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Rol" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
   </EntityType>
 </Schema>

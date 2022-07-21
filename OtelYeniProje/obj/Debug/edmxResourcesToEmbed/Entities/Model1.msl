@@ -306,5 +306,23 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="OdaDurum" FunctionName="Model1.Store.OdaDurum">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model1.OdaDurum_Result">
+          <ScalarProperty Name="DurumAd" ColumnName="DurumAd" />
+          <ScalarProperty Name="Sayı" ColumnName="Sayı" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="TblAdmins">
+      <EntityTypeMapping TypeName="Model1.TblAdmin">
+        <MappingFragment StoreEntitySet="TblAdmin">
+          <ScalarProperty Name="Rol" ColumnName="Rol" />
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+          <ScalarProperty Name="Kullanici" ColumnName="Kullanici" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
