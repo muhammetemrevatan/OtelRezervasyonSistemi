@@ -33,7 +33,7 @@ namespace OtelYeniProje.Formlar.Rezervasyon
                                            x.TblOda.OdaNo,
                                            x.Telefon,
                                            x.TblDurum.DurumAd
-                                       }).Where(y => y.DurumAd == "Çıkış Yapıldı").ToList();
+                                       }).Where(y => y.DurumAd == "Pasif").ToList();
         }
     }
 }

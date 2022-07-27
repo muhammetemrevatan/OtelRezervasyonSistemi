@@ -211,6 +211,7 @@
     <EntitySetMapping Name="TblRezervasyons">
       <EntityTypeMapping TypeName="Model1.TblRezervasyon">
         <MappingFragment StoreEntitySet="TblRezervasyon">
+          <ScalarProperty Name="Toplam" ColumnName="Toplam" />
           <ScalarProperty Name="RezervasyonID" ColumnName="RezervasyonID" />
           <ScalarProperty Name="Misafir" ColumnName="Misafir" />
           <ScalarProperty Name="GirisTarih" ColumnName="GirisTarih" />

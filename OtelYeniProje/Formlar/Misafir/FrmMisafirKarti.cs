@@ -148,6 +148,7 @@ namespace OtelYeniProje.Formlar.Misafir
                 deger.Durum = 1;
                 repo.TUpdate(deger);
                 XtraMessageBox.Show("Misafir kartı bilgileri güncellendi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
             
         }
@@ -196,7 +197,6 @@ namespace OtelYeniProje.Formlar.Misafir
                     XtraMessageBox.Show("Misafir sisteme başarılı bir şekilde kaydedildi.");
                     this.Close();
                 }
-                
             }
         }
     }

@@ -22,6 +22,7 @@ namespace OtelYeniProje.Formlar.Rezervasyon
 
         DbOtelEntities2 dbEntities1 = new DbOtelEntities2();
         Repository<TblRezervasyon> repo = new Repository<TblRezervasyon>();
+        Repository<TblOda> repo2 = new Repository<TblOda>();
         TblRezervasyon t = new TblRezervasyon();
         public int id;
 
@@ -48,8 +49,8 @@ namespace OtelYeniProje.Formlar.Rezervasyon
                                                    {
                                                        field.OdaID,
                                                        field.OdaNo,
-                                                       field.TblDurum.DurumAd
-                                                   }).Where(x => x.DurumAd == "Aktif").ToList();
+                                                       field.Durum
+                                                   }).Where(x => x.Durum == 1).ToList();
             // Durum Listesi
             lookUpEditDurum.Properties.DataSource = (from field in dbEntities1.TblDurums
                                                      select new
@@ -60,6 +61,13 @@ namespace OtelYeniProje.Formlar.Rezervasyon
             //Ürün güncelleme alanı
             if (id != 0)
             {
+                lookUpEditOda.Properties.DataSource = (from field in dbEntities1.TblOdas
+                                                       select new
+                                                       {
+                                                           field.OdaID,
+                                                           field.OdaNo,
+                                                           field.Durum
+                                                       }).ToList();
                 var rezervasyon = repo.Find(x => x.RezervasyonID == id);
                 lookUpEditMisafir.EditValue = rezervasyon.Misafir;
                 lookUpEditKisi2.EditValue = rezervasyon.Kisi2;
@@ -79,26 +87,32 @@ namespace OtelYeniProje.Formlar.Rezervasyon
                 }
                 TxtAciklama.Text = rezervasyon.Aciklana;
                 TxtTelefon.Text = rezervasyon.Telefon;
+                TxtToplam.Text = rezervasyon.Toplam.ToString();
+                TxtOdaNo.Text = rezervasyon.TblOda.OdaNo;
             }
 
 
         }
 
+        //Vazgeç butonuna tıklanınca
         private void BtnVazgec_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        // Güncelle butonu kapatma/açma
         public void BtnKaydetChanged(bool b)
         {
             BtnKaydet.Visible = b;
         }
 
+        // Kaydet butonunu kapatma/açma
         public void BtnGuncelleChanged(bool b)
         {
             BtnGuncelle.Visible = b;
         }
 
+        //Kaydet butonuna tıklanınca
         private void BtnKaydet_Click(object sender, EventArgs e)
         {
             if(numericUpDown1.Value == 1)
@@ -166,7 +180,7 @@ namespace OtelYeniProje.Formlar.Rezervasyon
             }
             
             if(dateEditGiris.Text.Equals("") || lookUpEditOda.EditValue.ToString().Equals("") 
-                || lookUpEditDurum.EditValue.ToString().Equals("")
+                || lookUpEditDurum.EditValue.ToString().Equals("") || TxtToplam.Text == ""
                 || lookUpEditMisafir.EditValue.ToString().Equals("") || TxtTelefon.Text == "")
             {
                 dateEditGiris.BackColor = System.Drawing.Color.LightGoldenrodYellow;
@@ -174,6 +188,7 @@ namespace OtelYeniProje.Formlar.Rezervasyon
                 lookUpEditDurum.BackColor = System.Drawing.Color.LightGoldenrodYellow; 
                 lookUpEditMisafir.BackColor = System.Drawing.Color.LightGoldenrodYellow;
                 TxtTelefon.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+                TxtToplam.BackColor = System.Drawing.Color.LightGoldenrodYellow;
                 XtraMessageBox.Show("Lütfen zorunlu alanları doldurun.", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
@@ -186,12 +201,15 @@ namespace OtelYeniProje.Formlar.Rezervasyon
                 t.Telefon = TxtTelefon.Text;
                 t.Aciklana = TxtAciklama.Text;
                 t.Durum = int.Parse(lookUpEditDurum.EditValue.ToString());
+                t.Toplam = Decimal.Parse(TxtToplam.Text);
                 repo.TAdd(t);
                 XtraMessageBox.Show("Rezervasyon sisteme kaydedildi.","Başarılı",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                this.Close();
             }
             
         }
 
+        // Kisi sayısı degistirilince gerceklesecek islemler
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
             if (numericUpDown1.Value == 1)
@@ -232,6 +250,7 @@ namespace OtelYeniProje.Formlar.Rezervasyon
             }
         }
 
+        // Misafir seçilince telefon bilgisini getirme
         private void lookUpEditMisafir_EditValueChanged(object sender, EventArgs e)
         {
             int secilen;
@@ -240,9 +259,18 @@ namespace OtelYeniProje.Formlar.Rezervasyon
             TxtTelefon.Text = telefon.ToString();
         }
 
+        // Güncelle butonuna tıklanınca
         private void BtnGuncelle_Click(object sender, EventArgs e)
         {
             var rezervasyon = repo.Find(x => x.RezervasyonID == id);
+
+            int databaseOdaValue = rezervasyon.Oda.Value;
+
+            if(databaseOdaValue != int.Parse(lookUpEditOda.EditValue.ToString()))
+            {
+                XtraMessageBox.Show("Oda Numarası Değiştirdiniz. Lütfen Eski Oda numarasını Oda tanımlarından düzenleyiniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
 
             if (numericUpDown1.Value == 1)
             {
@@ -308,7 +336,7 @@ namespace OtelYeniProje.Formlar.Rezervasyon
                 
             }
 
-            if (dateEditGiris.Text.Equals("") || lookUpEditOda.EditValue == null
+            if (dateEditGiris.Text.Equals("") || lookUpEditOda.EditValue == null || TxtToplam.Text == ""
                 || lookUpEditDurum == null || lookUpEditMisafir.EditValue == null || TxtTelefon.Text == "")
             {
                 dateEditGiris.BackColor = System.Drawing.Color.LightGoldenrodYellow;
@@ -316,6 +344,7 @@ namespace OtelYeniProje.Formlar.Rezervasyon
                 lookUpEditDurum.BackColor = System.Drawing.Color.LightGoldenrodYellow;
                 lookUpEditMisafir.BackColor = System.Drawing.Color.LightGoldenrodYellow;
                 TxtTelefon.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+                TxtToplam.BackColor = System.Drawing.Color.LightGoldenrodYellow;
                 XtraMessageBox.Show("Lütfen zorunlu alanları doldurun.", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
@@ -336,8 +365,10 @@ namespace OtelYeniProje.Formlar.Rezervasyon
                 rezervasyon.Telefon = TxtTelefon.Text;
                 rezervasyon.Aciklana = TxtAciklama.Text;
                 rezervasyon.Durum = int.Parse(lookUpEditDurum.EditValue.ToString());
+                rezervasyon.Toplam = Decimal.Parse(TxtToplam.Text);
                 repo.TUpdate(rezervasyon);
                 XtraMessageBox.Show("Rezervasyon Güncellendi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
         }
     }

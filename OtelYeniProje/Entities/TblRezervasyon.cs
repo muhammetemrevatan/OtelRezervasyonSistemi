@@ -27,6 +27,7 @@ namespace OtelYeniProje.Entities
         public string Telefon { get; set; }
         public string Aciklana { get; set; }
         public Nullable<int> Durum { get; set; }
+        public Nullable<decimal> Toplam { get; set; }
     
         public virtual TblDurum TblDurum { get; set; }
         public virtual TblMisafir TblMisafir { get; set; }

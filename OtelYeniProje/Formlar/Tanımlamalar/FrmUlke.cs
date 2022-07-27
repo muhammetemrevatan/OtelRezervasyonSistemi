@@ -29,21 +29,39 @@ namespace OtelYeniProje.Formlar.Tanımlamalar
 
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
+            
+            string cellValue = gridView1.GetFocusedDisplayText();
             try
             {
-                db.SaveChanges();
+                 var ulkeitems = (from x in db.TblUlkes
+                                 select new
+                                 {
+                                     x.UlkeAd
+                                 }).Where(a => a.UlkeAd.ToString().Equals(cellValue)).FirstOrDefault();
+
+                if (cellValue.ToLower().Equals(ulkeitems.UlkeAd.ToLower().ToString()))
+                {
+                    XtraMessageBox.Show("Bu ülke zaten eklenmiş", "Hoops!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.Close();
+                }
             }
             catch (Exception)
             {
-
-                XtraMessageBox.Show("Hatalı veri girişi.");
+                db.SaveChanges();
+                XtraMessageBox.Show("Başarıyla eklendi.", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            
         }
 
         private void silToolStripMenuItem_Click(object sender, EventArgs e)
         {
             bindingSource1.RemoveCurrent();
             db.SaveChanges();
+        }
+
+        private void gridView1_InitNewRow(object sender, DevExpress.XtraGrid.Views.Grid.InitNewRowEventArgs e)
+        {
+
         }
     }
 }
