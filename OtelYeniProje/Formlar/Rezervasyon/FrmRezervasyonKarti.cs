@@ -67,7 +67,7 @@ namespace OtelYeniProje.Formlar.Rezervasyon
                                                            field.OdaID,
                                                            field.OdaNo,
                                                            field.Durum
-                                                       }).ToList();
+                                                       }).Where(x => x.Durum == 1).ToList().ToList();
                 var rezervasyon = repo.Find(x => x.RezervasyonID == id);
                 lookUpEditMisafir.EditValue = rezervasyon.Misafir;
                 lookUpEditKisi2.EditValue = rezervasyon.Kisi2;
@@ -88,7 +88,17 @@ namespace OtelYeniProje.Formlar.Rezervasyon
                 TxtAciklama.Text = rezervasyon.Aciklana;
                 TxtTelefon.Text = rezervasyon.Telefon;
                 TxtToplam.Text = rezervasyon.Toplam.ToString();
-                TxtOdaNo.Text = rezervasyon.TblOda.OdaNo;
+                TxtAlinanUcret.Text = rezervasyon.AlinanUcret.ToString();
+                TxtKalanUcret.Text = (rezervasyon.Toplam - rezervasyon.AlinanUcret).ToString();
+                if (rezervasyon.Oda == null)
+                {
+                    XtraMessageBox.Show("Daha önceden bir oda atanmamış.", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    TxtOdaNo.Text = rezervasyon.TblOda.OdaNo;
+                }
+                
             }
 
 
@@ -202,6 +212,7 @@ namespace OtelYeniProje.Formlar.Rezervasyon
                 t.Aciklana = TxtAciklama.Text;
                 t.Durum = int.Parse(lookUpEditDurum.EditValue.ToString());
                 t.Toplam = Decimal.Parse(TxtToplam.Text);
+                t.AlinanUcret = Decimal.Parse(TxtAlinanUcret.Text);
                 repo.TAdd(t);
                 XtraMessageBox.Show("Rezervasyon sisteme kaydedildi.","Başarılı",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 this.Close();
@@ -263,10 +274,19 @@ namespace OtelYeniProje.Formlar.Rezervasyon
         private void BtnGuncelle_Click(object sender, EventArgs e)
         {
             var rezervasyon = repo.Find(x => x.RezervasyonID == id);
+            int databaseOdaValue;
+           
+            try
+            {
+               databaseOdaValue = rezervasyon.Oda.Value;
+            }
+            catch (Exception)
+            {
+                XtraMessageBox.Show("Daha önce bir oda numarası atanmamış", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                databaseOdaValue = 0;
+            }
 
-            int databaseOdaValue = rezervasyon.Oda.Value;
-
-            if(databaseOdaValue != int.Parse(lookUpEditOda.EditValue.ToString()))
+            if (databaseOdaValue != int.Parse(lookUpEditOda.EditValue.ToString()) && databaseOdaValue != 0)
             {
                 XtraMessageBox.Show("Oda Numarası Değiştirdiniz. Lütfen Eski Oda numarasını Oda tanımlarından düzenleyiniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -366,6 +386,7 @@ namespace OtelYeniProje.Formlar.Rezervasyon
                 rezervasyon.Aciklana = TxtAciklama.Text;
                 rezervasyon.Durum = int.Parse(lookUpEditDurum.EditValue.ToString());
                 rezervasyon.Toplam = Decimal.Parse(TxtToplam.Text);
+                rezervasyon.AlinanUcret = Decimal.Parse(TxtAlinanUcret.Text);
                 repo.TUpdate(rezervasyon);
                 XtraMessageBox.Show("Rezervasyon Güncellendi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();

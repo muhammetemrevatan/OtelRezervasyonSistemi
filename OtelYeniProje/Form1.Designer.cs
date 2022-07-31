@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::OtelYeniProje.SplashScreen2), true, true);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.BtnMisafirListesi = new DevExpress.XtraBars.BarButtonItem();
             this.BtnDurumTanimlari = new DevExpress.XtraBars.BarButtonItem();
@@ -65,7 +65,7 @@
             this.BtnWord = new DevExpress.XtraBars.BarButtonItem();
             this.BtnExcel = new DevExpress.XtraBars.BarButtonItem();
             this.BtnSifreİslemleri = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnYetkiler = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
             this.BtnHesapMakinesi = new DevExpress.XtraBars.BarButtonItem();
             this.BtnYeniKayitlar = new DevExpress.XtraBars.BarButtonItem();
@@ -79,6 +79,10 @@
             this.BtnAnaForm = new DevExpress.XtraBars.BarButtonItem();
             this.BtnGrafik2 = new DevExpress.XtraBars.BarButtonItem();
             this.BtnGrafik1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnResepsiyonHareket = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnToplamBakiye = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnResepsiyonGiris = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -96,6 +100,9 @@
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage7 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage10 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup17 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup18 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage9 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup16 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage8 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -105,9 +112,16 @@
             this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup15 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.ribbonPage11 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup19 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.BtnRaporSihirbazi = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // splashScreenManager1
+            // 
+            splashScreenManager1.ClosingDelay = 500;
             // 
             // ribbonControl1
             // 
@@ -150,7 +164,7 @@
             this.BtnWord,
             this.BtnExcel,
             this.BtnSifreİslemleri,
-            this.barButtonItem11,
+            this.BtnYetkiler,
             this.barButtonItem12,
             this.BtnHesapMakinesi,
             this.BtnYeniKayitlar,
@@ -163,9 +177,14 @@
             this.BtnHakkimdaKarti,
             this.BtnAnaForm,
             this.BtnGrafik2,
-            this.BtnGrafik1});
+            this.BtnGrafik1,
+            this.barButtonItem5,
+            this.BtnResepsiyonHareket,
+            this.BtnToplamBakiye,
+            this.BtnResepsiyonGiris,
+            this.BtnRaporSihirbazi});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 49;
+            this.ribbonControl1.MaxItemId = 54;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -175,8 +194,10 @@
             this.ribbonPage5,
             this.ribbonPage6,
             this.ribbonPage7,
+            this.ribbonPage10,
             this.ribbonPage9,
-            this.ribbonPage8});
+            this.ribbonPage8,
+            this.ribbonPage11});
             this.ribbonControl1.Size = new System.Drawing.Size(1064, 150);
             // 
             // BtnMisafirListesi
@@ -471,13 +492,14 @@
             this.BtnSifreİslemleri.Name = "BtnSifreİslemleri";
             this.BtnSifreİslemleri.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnSifreİslemleri_ItemClick);
             // 
-            // barButtonItem11
+            // BtnYetkiler
             // 
-            this.barButtonItem11.Caption = "Yetkiler";
-            this.barButtonItem11.Id = 35;
-            this.barButtonItem11.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem11.ImageOptions.Image")));
-            this.barButtonItem11.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem11.ImageOptions.LargeImage")));
-            this.barButtonItem11.Name = "barButtonItem11";
+            this.BtnYetkiler.Caption = "Yetkiler";
+            this.BtnYetkiler.Id = 35;
+            this.BtnYetkiler.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnYetkiler.ImageOptions.Image")));
+            this.BtnYetkiler.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnYetkiler.ImageOptions.LargeImage")));
+            this.BtnYetkiler.Name = "BtnYetkiler";
+            this.BtnYetkiler.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnYetkiler_ItemClick);
             // 
             // barButtonItem12
             // 
@@ -594,6 +616,41 @@
             this.BtnGrafik1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnGrafik1.ImageOptions.LargeImage")));
             this.BtnGrafik1.Name = "BtnGrafik1";
             this.BtnGrafik1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnGrafik1_ItemClick);
+            // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Caption = "Yeni Kasa Kartı";
+            this.barButtonItem5.Id = 49;
+            this.barButtonItem5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
+            this.barButtonItem5.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.LargeImage")));
+            this.barButtonItem5.Name = "barButtonItem5";
+            // 
+            // BtnResepsiyonHareket
+            // 
+            this.BtnResepsiyonHareket.Caption = "Resepsiyon Hareketleri";
+            this.BtnResepsiyonHareket.Id = 50;
+            this.BtnResepsiyonHareket.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnResepsiyonHareket.ImageOptions.Image")));
+            this.BtnResepsiyonHareket.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnResepsiyonHareket.ImageOptions.LargeImage")));
+            this.BtnResepsiyonHareket.Name = "BtnResepsiyonHareket";
+            this.BtnResepsiyonHareket.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnResepsiyonHareket_ItemClick);
+            // 
+            // BtnToplamBakiye
+            // 
+            this.BtnToplamBakiye.Caption = "Toplam Bakiye";
+            this.BtnToplamBakiye.Id = 51;
+            this.BtnToplamBakiye.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnToplamBakiye.ImageOptions.Image")));
+            this.BtnToplamBakiye.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnToplamBakiye.ImageOptions.LargeImage")));
+            this.BtnToplamBakiye.Name = "BtnToplamBakiye";
+            this.BtnToplamBakiye.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnToplamBakiye_ItemClick);
+            // 
+            // BtnResepsiyonGiris
+            // 
+            this.BtnResepsiyonGiris.Caption = "Yeni Resepsiyon Girişi";
+            this.BtnResepsiyonGiris.Id = 52;
+            this.BtnResepsiyonGiris.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnResepsiyonGiris.ImageOptions.Image")));
+            this.BtnResepsiyonGiris.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnResepsiyonGiris.ImageOptions.LargeImage")));
+            this.BtnResepsiyonGiris.Name = "BtnResepsiyonGiris";
+            this.BtnResepsiyonGiris.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnResepsiyonGiris_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -719,9 +776,30 @@
             this.ribbonPageGroup9.ItemLinks.Add(this.BtnWord);
             this.ribbonPageGroup9.ItemLinks.Add(this.BtnExcel);
             this.ribbonPageGroup9.ItemLinks.Add(this.BtnSifreİslemleri);
-            this.ribbonPageGroup9.ItemLinks.Add(this.barButtonItem11);
+            this.ribbonPageGroup9.ItemLinks.Add(this.BtnYetkiler);
             this.ribbonPageGroup9.ItemLinks.Add(this.barButtonItem12);
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
+            // 
+            // ribbonPage10
+            // 
+            this.ribbonPage10.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup17,
+            this.ribbonPageGroup18});
+            this.ribbonPage10.Name = "ribbonPage10";
+            this.ribbonPage10.Text = "Kasa";
+            // 
+            // ribbonPageGroup17
+            // 
+            this.ribbonPageGroup17.ItemLinks.Add(this.BtnResepsiyonGiris);
+            this.ribbonPageGroup17.ItemLinks.Add(this.BtnResepsiyonHareket);
+            this.ribbonPageGroup17.ItemLinks.Add(this.BtnToplamBakiye);
+            this.ribbonPageGroup17.Name = "ribbonPageGroup17";
+            this.ribbonPageGroup17.Text = "Resepsiyon İşlemleri";
+            // 
+            // ribbonPageGroup18
+            // 
+            this.ribbonPageGroup18.Name = "ribbonPageGroup18";
+            this.ribbonPageGroup18.Text = "Market İşlemleri";
             // 
             // ribbonPage9
             // 
@@ -779,9 +857,26 @@
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
-            // splashScreenManager1
+            // ribbonPage11
             // 
-            splashScreenManager1.ClosingDelay = 500;
+            this.ribbonPage11.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup19});
+            this.ribbonPage11.Name = "ribbonPage11";
+            this.ribbonPage11.Text = "Rapor Sihirbazı";
+            // 
+            // ribbonPageGroup19
+            // 
+            this.ribbonPageGroup19.ItemLinks.Add(this.BtnRaporSihirbazi);
+            this.ribbonPageGroup19.Name = "ribbonPageGroup19";
+            // 
+            // BtnRaporSihirbazi
+            // 
+            this.BtnRaporSihirbazi.Caption = "Rapor Sihirbazı";
+            this.BtnRaporSihirbazi.Id = 53;
+            this.BtnRaporSihirbazi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
+            this.BtnRaporSihirbazi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.LargeImage")));
+            this.BtnRaporSihirbazi.Name = "BtnRaporSihirbazi";
+            this.BtnRaporSihirbazi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnRaporSihirbazi_ItemClick);
             // 
             // Form1
             // 
@@ -855,7 +950,7 @@
         private DevExpress.XtraBars.BarButtonItem BtnWord;
         private DevExpress.XtraBars.BarButtonItem BtnExcel;
         private DevExpress.XtraBars.BarButtonItem BtnSifreİslemleri;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem11;
+        private DevExpress.XtraBars.BarButtonItem BtnYetkiler;
         private DevExpress.XtraBars.BarButtonItem barButtonItem12;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage7;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
@@ -880,6 +975,16 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage9;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup16;
         private DevExpress.XtraBars.BarButtonItem BtnGrafik1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.BarButtonItem BtnResepsiyonHareket;
+        private DevExpress.XtraBars.BarButtonItem BtnToplamBakiye;
+        private DevExpress.XtraBars.BarButtonItem BtnResepsiyonGiris;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage10;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup17;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup18;
+        private DevExpress.XtraBars.BarButtonItem BtnRaporSihirbazi;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage11;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup19;
     }
 }
 

@@ -21,12 +21,14 @@ namespace OtelYeniProje.Formlar.Admin
         }
 
         DbOtelEntities2 db = new DbOtelEntities2();
+
         private void BtnGiris_Click(object sender, EventArgs e)
         {
             var kullanici = db.TblAdmins.Where(x => x.Kullanici == TxtKullanici.Text && x.Sifre == TxtSifre.Text).FirstOrDefault();
             if (kullanici != null)
             {
                 Form1 frm = new Form1();
+                frm.kullanicirol = kullanici.Rol;
                 frm.Show();
                 this.Hide(); // Giriş formu gizlendi.
             }
@@ -38,6 +40,7 @@ namespace OtelYeniProje.Formlar.Admin
 
         private void FrmGiris_Load(object sender, EventArgs e)
         {
+
         }
     }
 }

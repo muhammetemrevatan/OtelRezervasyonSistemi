@@ -21,11 +21,13 @@ namespace OtelYeniProje.Formlar.AnaForm
         private void FrmAnaForm_Load(object sender, EventArgs e)
         {
             // Misafir Listesi
+            
             gridControl3.DataSource = (from x in db.TblMisafirs
                                        select new
                                        {
                                            x.AdSoyad
                                        }).ToList();
+                                       
             // Mesaj Listesi
             gridControl4.DataSource = (from x in db.TblMesajs
                                        select new

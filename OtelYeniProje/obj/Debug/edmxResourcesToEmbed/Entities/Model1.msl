@@ -211,6 +211,7 @@
     <EntitySetMapping Name="TblRezervasyons">
       <EntityTypeMapping TypeName="Model1.TblRezervasyon">
         <MappingFragment StoreEntitySet="TblRezervasyon">
+          <ScalarProperty Name="AlinanUcret" ColumnName="AlinanUcret" />
           <ScalarProperty Name="Toplam" ColumnName="Toplam" />
           <ScalarProperty Name="RezervasyonID" ColumnName="RezervasyonID" />
           <ScalarProperty Name="Misafir" ColumnName="Misafir" />
@@ -321,6 +322,17 @@
           <ScalarProperty Name="Rol" ColumnName="Rol" />
           <ScalarProperty Name="Sifre" ColumnName="Sifre" />
           <ScalarProperty Name="Kullanici" ColumnName="Kullanici" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblKasaHareketis">
+      <EntityTypeMapping TypeName="Model1.TblKasaHareketi">
+        <MappingFragment StoreEntitySet="TblKasaHareketi">
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="Tutar" ColumnName="Tutar" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="IslemAdı" ColumnName="IslemAdı" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>

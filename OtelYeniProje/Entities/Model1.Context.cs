@@ -54,6 +54,7 @@ namespace OtelYeniProje.Entities
         public virtual DbSet<TblYeniKayit> TblYeniKayits { get; set; }
         public virtual DbSet<TblOnRezervasyon> TblOnRezervasyons { get; set; }
         public virtual DbSet<TblAdmin> TblAdmins { get; set; }
+        public virtual DbSet<TblKasaHareketi> TblKasaHareketis { get; set; }
     
         public virtual ObjectResult<OdaDurum_Result> OdaDurum()
         {

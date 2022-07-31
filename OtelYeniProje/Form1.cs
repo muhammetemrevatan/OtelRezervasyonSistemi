@@ -294,11 +294,47 @@ namespace OtelYeniProje
             fr.Show();
         }
 
+        public string kullanicirol;
         private void Form1_Load(object sender, EventArgs e)
         {
-            Thread.Sleep(5000);
+            //Thread.Sleep(5000);
+            //if(kullanicirol != "B")
+            //{
+            //    ribbonPage6.Visible = false;
+            //}
             Formlar.AnaForm.FrmAnaForm fr = new Formlar.AnaForm.FrmAnaForm();
             fr.MdiParent = this;
+            fr.Show();
+        }
+
+        private void BtnYetkiler_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Admin.FrmSifreIslemleri fr = new Formlar.Admin.FrmSifreIslemleri();
+            fr.Show();
+        }
+
+        private void BtnResepsiyonHareket_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Kasa.FrmResepsiyonHareket fr = new Formlar.Kasa.FrmResepsiyonHareket();
+            fr.MdiParent = this;
+            fr.Show();
+        }
+
+        private void BtnToplamBakiye_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Kasa.FrmToplamBakiye fr = new Formlar.Kasa.FrmToplamBakiye();
+            fr.Show();
+        }
+
+        private void BtnResepsiyonGiris_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Kasa.FrmResepsiyonGiris fr = new Formlar.Kasa.FrmResepsiyonGiris();
+            fr.Show();
+        }
+
+        private void BtnRaporSihirbazi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Raporlar.FrmRapor fr = new Formlar.Raporlar.FrmRapor();
             fr.Show();
         }
     }

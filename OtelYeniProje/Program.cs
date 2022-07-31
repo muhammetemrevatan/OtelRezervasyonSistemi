@@ -16,7 +16,7 @@ namespace OtelYeniProje
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Formlar.Admin.FrmGiris());
+            Application.Run(new Form1());
         }
     }
 }

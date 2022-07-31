@@ -75,12 +75,19 @@
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.pictureEdit8 = new DevExpress.XtraEditors.PictureEdit();
             this.groupControl7 = new DevExpress.XtraEditors.GroupControl();
+            this.TxtOdaNo = new DevExpress.XtraEditors.TextEdit();
             this.pictureEdit13 = new DevExpress.XtraEditors.PictureEdit();
             this.pictureEdit11 = new DevExpress.XtraEditors.PictureEdit();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.TxtToplam = new DevExpress.XtraEditors.TextEdit();
-            this.TxtOdaNo = new DevExpress.XtraEditors.TextEdit();
+            this.groupControl8 = new DevExpress.XtraEditors.GroupControl();
+            this.pictureEdit15 = new DevExpress.XtraEditors.PictureEdit();
+            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
+            this.TxtKalanUcret = new DevExpress.XtraEditors.TextEdit();
+            this.pictureEdit14 = new DevExpress.XtraEditors.PictureEdit();
+            this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
+            this.TxtAlinanUcret = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditOda.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit6.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit5.Properties)).BeginInit();
@@ -119,10 +126,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit8.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).BeginInit();
             this.groupControl7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtOdaNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit13.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit11.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtToplam.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtOdaNo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl8)).BeginInit();
+            this.groupControl8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit15.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtKalanUcret.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit14.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtAlinanUcret.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // lookUpEditOda
@@ -417,7 +430,7 @@
             this.groupControl4.Controls.Add(this.BtnGuncelle);
             this.groupControl4.Controls.Add(this.BtnVazgec);
             this.groupControl4.Controls.Add(this.BtnKaydet);
-            this.groupControl4.Location = new System.Drawing.Point(12, 406);
+            this.groupControl4.Location = new System.Drawing.Point(12, 452);
             this.groupControl4.Name = "groupControl4";
             this.groupControl4.ShowCaption = false;
             this.groupControl4.Size = new System.Drawing.Size(470, 59);
@@ -460,7 +473,7 @@
             this.groupControl6.Controls.Add(this.pictureEdit7);
             this.groupControl6.Controls.Add(this.labelControl7);
             this.groupControl6.Controls.Add(this.TxtAciklama);
-            this.groupControl6.Location = new System.Drawing.Point(3, 290);
+            this.groupControl6.Location = new System.Drawing.Point(3, 336);
             this.groupControl6.Name = "groupControl6";
             this.groupControl6.ShowCaption = false;
             this.groupControl6.Size = new System.Drawing.Size(489, 110);
@@ -661,6 +674,15 @@
             this.groupControl7.TabIndex = 32;
             this.groupControl7.Text = "groupControl7";
             // 
+            // TxtOdaNo
+            // 
+            this.TxtOdaNo.Location = new System.Drawing.Point(341, 5);
+            this.TxtOdaNo.Name = "TxtOdaNo";
+            this.TxtOdaNo.Properties.MaxLength = 11;
+            this.TxtOdaNo.Properties.ReadOnly = true;
+            this.TxtOdaNo.Size = new System.Drawing.Size(133, 20);
+            this.TxtOdaNo.TabIndex = 34;
+            // 
             // pictureEdit13
             // 
             this.pictureEdit13.EditValue = ((object)(resources.GetObject("pictureEdit13.EditValue")));
@@ -699,9 +721,9 @@
             // 
             this.labelControl13.Location = new System.Drawing.Point(45, 8);
             this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Size = new System.Drawing.Size(34, 13);
+            this.labelControl13.Size = new System.Drawing.Size(58, 13);
             this.labelControl13.TabIndex = 3;
-            this.labelControl13.Text = "Toplam";
+            this.labelControl13.Text = "Toplam Borç";
             // 
             // TxtToplam
             // 
@@ -711,20 +733,85 @@
             this.TxtToplam.Size = new System.Drawing.Size(133, 20);
             this.TxtToplam.TabIndex = 4;
             // 
-            // TxtOdaNo
+            // groupControl8
             // 
-            this.TxtOdaNo.Location = new System.Drawing.Point(341, 5);
-            this.TxtOdaNo.Name = "TxtOdaNo";
-            this.TxtOdaNo.Properties.MaxLength = 11;
-            this.TxtOdaNo.Properties.ReadOnly = true;
-            this.TxtOdaNo.Size = new System.Drawing.Size(133, 20);
-            this.TxtOdaNo.TabIndex = 34;
+            this.groupControl8.Controls.Add(this.pictureEdit15);
+            this.groupControl8.Controls.Add(this.labelControl14);
+            this.groupControl8.Controls.Add(this.TxtKalanUcret);
+            this.groupControl8.Controls.Add(this.pictureEdit14);
+            this.groupControl8.Controls.Add(this.labelControl15);
+            this.groupControl8.Controls.Add(this.TxtAlinanUcret);
+            this.groupControl8.Location = new System.Drawing.Point(3, 290);
+            this.groupControl8.Name = "groupControl8";
+            this.groupControl8.ShowCaption = false;
+            this.groupControl8.Size = new System.Drawing.Size(489, 30);
+            this.groupControl8.TabIndex = 35;
+            this.groupControl8.Text = "groupControl8";
+            // 
+            // pictureEdit15
+            // 
+            this.pictureEdit15.EditValue = ((object)(resources.GetObject("pictureEdit15.EditValue")));
+            this.pictureEdit15.Location = new System.Drawing.Point(245, 5);
+            this.pictureEdit15.Name = "pictureEdit15";
+            this.pictureEdit15.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.pictureEdit15.Properties.Appearance.Options.UseBackColor = true;
+            this.pictureEdit15.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.pictureEdit15.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit15.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.pictureEdit15.Size = new System.Drawing.Size(20, 20);
+            this.pictureEdit15.TabIndex = 8;
+            // 
+            // labelControl14
+            // 
+            this.labelControl14.Location = new System.Drawing.Point(281, 8);
+            this.labelControl14.Name = "labelControl14";
+            this.labelControl14.Size = new System.Drawing.Size(26, 13);
+            this.labelControl14.TabIndex = 6;
+            this.labelControl14.Text = "Kalan";
+            // 
+            // TxtKalanUcret
+            // 
+            this.TxtKalanUcret.Location = new System.Drawing.Point(342, 5);
+            this.TxtKalanUcret.Name = "TxtKalanUcret";
+            this.TxtKalanUcret.Properties.MaxLength = 11;
+            this.TxtKalanUcret.Size = new System.Drawing.Size(133, 20);
+            this.TxtKalanUcret.TabIndex = 7;
+            // 
+            // pictureEdit14
+            // 
+            this.pictureEdit14.EditValue = ((object)(resources.GetObject("pictureEdit14.EditValue")));
+            this.pictureEdit14.Location = new System.Drawing.Point(9, 5);
+            this.pictureEdit14.Name = "pictureEdit14";
+            this.pictureEdit14.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.pictureEdit14.Properties.Appearance.Options.UseBackColor = true;
+            this.pictureEdit14.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.pictureEdit14.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit14.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.pictureEdit14.Size = new System.Drawing.Size(20, 20);
+            this.pictureEdit14.TabIndex = 5;
+            // 
+            // labelControl15
+            // 
+            this.labelControl15.Location = new System.Drawing.Point(45, 8);
+            this.labelControl15.Name = "labelControl15";
+            this.labelControl15.Size = new System.Drawing.Size(29, 13);
+            this.labelControl15.TabIndex = 3;
+            this.labelControl15.Text = "Alınan";
+            // 
+            // TxtAlinanUcret
+            // 
+            this.TxtAlinanUcret.Location = new System.Drawing.Point(106, 5);
+            this.TxtAlinanUcret.Name = "TxtAlinanUcret";
+            this.TxtAlinanUcret.Properties.MaxLength = 11;
+            this.TxtAlinanUcret.Size = new System.Drawing.Size(133, 20);
+            this.TxtAlinanUcret.TabIndex = 4;
             // 
             // FrmRezervasyonKarti
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(494, 474);
+            this.ClientSize = new System.Drawing.Size(494, 523);
+            this.Controls.Add(this.groupControl8);
             this.Controls.Add(this.groupControl7);
             this.Controls.Add(this.groupControl5);
             this.Controls.Add(this.groupControl4);
@@ -782,10 +869,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).EndInit();
             this.groupControl7.ResumeLayout(false);
             this.groupControl7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtOdaNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit13.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit11.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtToplam.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtOdaNo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl8)).EndInit();
+            this.groupControl8.ResumeLayout(false);
+            this.groupControl8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit15.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtKalanUcret.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit14.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtAlinanUcret.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -843,5 +937,12 @@
         private DevExpress.XtraEditors.PictureEdit pictureEdit11;
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.TextEdit TxtOdaNo;
+        private DevExpress.XtraEditors.GroupControl groupControl8;
+        private DevExpress.XtraEditors.PictureEdit pictureEdit15;
+        private DevExpress.XtraEditors.LabelControl labelControl14;
+        private DevExpress.XtraEditors.TextEdit TxtKalanUcret;
+        private DevExpress.XtraEditors.PictureEdit pictureEdit14;
+        private DevExpress.XtraEditors.LabelControl labelControl15;
+        private DevExpress.XtraEditors.TextEdit TxtAlinanUcret;
     }
 }
